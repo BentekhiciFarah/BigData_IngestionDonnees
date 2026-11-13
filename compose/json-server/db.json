@@ -1,0 +1,26 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nom": "Entreprise exemple A",
+      "ville": "Orsay"
+    },
+    {
+      "id": 2,
+      "nom": "Entreprise exemple B",
+      "ville": "Paris"
+    }
+  ],
+  "commandes": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "montant": 120.0
+    },
+    {
+      "id": 2,
+      "clientId": 2,
+      "montant": 85.5
+    }
+  ]
+}

@@ -1,0 +1,707 @@
+version: 6.44.0
+
+type: DeclarativeSource
+
+description: >
+  Source API Recherche d'entreprises (api.gouv.fr) — unités légales de l'ESS
+  actives, partitionnées par département, pour dépôt en couche Bronze (MinIO).
+
+check:
+  type: CheckStream
+  stream_names:
+    - API ESS -> Airbyte
+
+streams:
+  - type: DeclarativeStream
+    name: API ESS -> Airbyte
+    retriever:
+      type: SimpleRetriever
+      paginator:
+        type: DefaultPaginator
+        page_size_option:
+          type: RequestOption
+          field_name: per_page
+          inject_into: request_parameter
+        page_token_option:
+          type: RequestOption
+          field_name: page
+          inject_into: request_parameter
+        pagination_strategy:
+          type: CursorPagination
+          page_size: 25
+          cursor_value: "{{ response.page + 1 }}"
+          stop_condition: "{{ response.page >= response.total_pages or response.page >= 400 }}"
+      requester:
+        type: HttpRequester
+        url: https://recherche-entreprises.api.gouv.fr/search
+        http_method: GET
+        error_handler:
+          type: CompositeErrorHandler
+          error_handlers:
+            - type: DefaultErrorHandler
+              max_retries: 8
+              response_filters:
+                - type: HttpResponseFilter
+                  action: RETRY
+                  http_codes:
+                    - 429
+                  error_message: Rate limit API Recherche d'entreprises (429)
+              backoff_strategies:
+                - type: WaitTimeFromHeader
+                  header: Retry-After
+                - type: ExponentialBackoffStrategy
+                  factor: 5
+            - type: DefaultErrorHandler
+              max_retries: 5
+              response_filters:
+                - type: HttpResponseFilter
+                  action: RETRY
+                  http_codes:
+                    - 500
+                    - 502
+                    - 503
+                    - 504
+                  error_message: Erreur serveur API Recherche d'entreprises
+              backoff_strategies:
+                - type: ExponentialBackoffStrategy
+                  factor: 5
+        request_headers:
+          Accept: application/json
+        request_parameters:
+          est_ess: "true"
+          include: siege,complements,matching_etablissements
+          minimal: "true"
+          etat_administratif: "{{ config['etat_administratif'] }}"
+          limite_matching_etablissements: "100"
+      record_selector:
+        type: RecordSelector
+        extractor:
+          type: DpathExtractor
+          field_path:
+            - results
+      partition_router:
+        type: ListPartitionRouter
+        values: "{{ config['departements'] }}"
+        cursor_field: department
+        request_option:
+          type: RequestOption
+          field_name: departement
+          inject_into: request_parameter
+    primary_key:
+      - siren
+      - extract_department
+    schema_loader:
+      type: InlineSchemaLoader
+      schema:
+        type: object
+        $schema: http://json-schema.org/schema#
+        required:
+          - siren
+          - extract_department
+        properties:
+          siege:
+            type:
+              - object
+              - "null"
+            properties:
+              epci:
+                type:
+                  - string
+                  - "null"
+              cedex:
+                type:
+                  - string
+                  - "null"
+              siret:
+                type:
+                  - string
+                  - "null"
+              a_opco:
+                type:
+                  - boolean
+                  - "null"
+              region:
+                type:
+                  - string
+                  - "null"
+              adresse:
+                type:
+                  - string
+                  - "null"
+              commune:
+                type:
+                  - string
+                  - "null"
+              latitude:
+                type:
+                  - string
+                  - "null"
+              est_siege:
+                type:
+                  - boolean
+                  - "null"
+              liste_uai:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type:
+                    - string
+                    - "null"
+              longitude:
+                type:
+                  - string
+                  - "null"
+              type_voie:
+                type:
+                  - string
+                  - "null"
+              liste_idcc:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type:
+                    - string
+                    - "null"
+              code_postal:
+                type:
+                  - string
+                  - "null"
+              coordonnees:
+                type:
+                  - string
+                  - "null"
+              departement:
+                type:
+                  - string
+                  - "null"
+              numero_voie:
+                type:
+                  - string
+                  - "null"
+              libelle_voie:
+                type:
+                  - string
+                  - "null"
+              liste_finess:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type:
+                    - string
+                    - "null"
+              liste_id_bio:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type:
+                    - number
+                    - "null"
+              date_creation:
+                type:
+                  - string
+                  - "null"
+              libelle_cedex:
+                type:
+                  - string
+                  - "null"
+              nom_commercial:
+                type:
+                  - string
+                  - "null"
+              libelle_commune:
+                type:
+                  - string
+                  - "null"
+              liste_enseignes:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type:
+                    - string
+                    - "null"
+              indice_repetition:
+                type:
+                  - string
+                  - "null"
+              complement_adresse:
+                type:
+                  - string
+                  - "null"
+              etat_administratif:
+                type:
+                  - string
+                  - "null"
+              activite_principale:
+                type:
+                  - string
+                  - "null"
+              caractere_employeur:
+                type:
+                  - string
+                  - "null"
+              date_debut_activite:
+                type:
+                  - string
+                  - "null"
+              dernier_numero_voie:
+                type:
+                  - string
+                  - "null"
+              distribution_speciale:
+                type:
+                  - string
+                  - "null"
+              date_mise_a_jour_insee:
+                type:
+                  - string
+                  - "null"
+              tranche_effectif_salarie:
+                type:
+                  - string
+                  - "null"
+              activite_principale_naf25:
+                type:
+                  - string
+                  - "null"
+              annee_tranche_effectif_salarie:
+                type:
+                  - string
+                  - "null"
+              statut_diffusion_etablissement:
+                type:
+                  - string
+                  - "null"
+              activite_principale_registre_metier:
+                type:
+                  - string
+                  - "null"
+          sigle:
+            type:
+              - string
+              - "null"
+          siren:
+            type: string
+          complements:
+            type:
+              - object
+              - "null"
+            properties:
+              est_bio:
+                type:
+                  - boolean
+                  - "null"
+              est_ess:
+                type:
+                  - boolean
+                  - "null"
+              est_rge:
+                type:
+                  - boolean
+                  - "null"
+              est_uai:
+                type:
+                  - boolean
+                  - "null"
+              est_siae:
+                type:
+                  - boolean
+                  - "null"
+              type_siae:
+                type:
+                  - string
+                  - "null"
+              est_avocat:
+                type:
+                  - boolean
+                  - "null"
+              est_finess:
+                type:
+                  - boolean
+                  - "null"
+              liste_idcc:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type:
+                    - string
+                    - "null"
+              numero_rnf:
+                type:
+                  - string
+                  - "null"
+              a_aide_ademe:
+                type:
+                  - boolean
+                  - "null"
+              est_qualiopi:
+                type:
+                  - boolean
+                  - "null"
+              a_aide_minimis:
+                type:
+                  - boolean
+                  - "null"
+              est_association:
+                type:
+                  - boolean
+                  - "null"
+              egapro_renseignee:
+                type:
+                  - boolean
+                  - "null"
+              est_administration:
+                type:
+                  - boolean
+                  - "null"
+              est_alim_confiance:
+                type:
+                  - boolean
+                  - "null"
+              bilan_ges_renseigne:
+                type:
+                  - boolean
+                  - "null"
+              est_societe_mission:
+                type:
+                  - boolean
+                  - "null"
+              est_patrimoine_vivant:
+                type:
+                  - boolean
+                  - "null"
+              liste_finess_juridique:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type:
+                    - string
+                    - "null"
+              est_achats_responsables:
+                type:
+                  - boolean
+                  - "null"
+              est_organisme_formation:
+                type:
+                  - boolean
+                  - "null"
+              identifiant_association:
+                type:
+                  - string
+                  - "null"
+              est_entrepreneur_spectacle:
+                type:
+                  - boolean
+                  - "null"
+              est_entrepreneur_individuel:
+                type:
+                  - boolean
+                  - "null"
+              liste_id_organisme_formation:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type:
+                    - string
+                    - "null"
+              statut_entrepreneur_spectacle:
+                type:
+                  - string
+                  - "null"
+              convention_collective_renseignee:
+                type:
+                  - boolean
+                  - "null"
+          nom_complet:
+            type:
+              - string
+              - "null"
+          extracted_at:
+            type:
+              - string
+              - "null"
+          date_creation:
+            type:
+              - string
+              - "null"
+          date_mise_a_jour:
+            type:
+              - string
+              - "null"
+          nature_juridique:
+            type:
+              - string
+              - "null"
+          statut_diffusion:
+            type:
+              - string
+              - "null"
+          etat_administratif:
+            type:
+              - string
+              - "null"
+          extract_department:
+            type: number
+          nom_raison_sociale:
+            type:
+              - string
+              - "null"
+          activite_principale:
+            type:
+              - string
+              - "null"
+          categorie_entreprise:
+            type:
+              - string
+              - "null"
+          date_mise_a_jour_rne:
+            type:
+              - string
+              - "null"
+          nombre_etablissements:
+            type:
+              - number
+              - "null"
+          date_mise_a_jour_insee:
+            type:
+              - string
+              - "null"
+          matching_etablissements:
+            type:
+              - array
+              - "null"
+            items:
+              type:
+                - object
+                - "null"
+              properties:
+                epci:
+                  type:
+                    - string
+                    - "null"
+                siret:
+                  type:
+                    - string
+                    - "null"
+                a_opco:
+                  type:
+                    - boolean
+                    - "null"
+                region:
+                  type:
+                    - string
+                    - "null"
+                adresse:
+                  type:
+                    - string
+                    - "null"
+                commune:
+                  type:
+                    - string
+                    - "null"
+                latitude:
+                  type:
+                    - string
+                    - "null"
+                est_siege:
+                  type:
+                    - boolean
+                    - "null"
+                liste_uai:
+                  type:
+                    - array
+                    - "null"
+                  items:
+                    type:
+                      - string
+                      - "null"
+                longitude:
+                  type:
+                    - string
+                    - "null"
+                liste_idcc:
+                  type:
+                    - array
+                    - "null"
+                  items:
+                    type:
+                      - string
+                      - "null"
+                code_postal:
+                  type:
+                    - string
+                    - "null"
+                ancien_siege:
+                  type:
+                    - boolean
+                    - "null"
+                liste_finess:
+                  type:
+                    - array
+                    - "null"
+                  items:
+                    type:
+                      - string
+                      - "null"
+                liste_id_bio:
+                  type:
+                    - array
+                    - "null"
+                  items:
+                    type:
+                      - number
+                      - "null"
+                date_creation:
+                  type:
+                    - string
+                    - "null"
+                date_fermeture:
+                  type:
+                    - string
+                    - "null"
+                nom_commercial:
+                  type:
+                    - string
+                    - "null"
+                libelle_commune:
+                  type:
+                    - string
+                    - "null"
+                liste_enseignes:
+                  type:
+                    - array
+                    - "null"
+                  items:
+                    type:
+                      - string
+                      - "null"
+                etat_administratif:
+                  type:
+                    - string
+                    - "null"
+                activite_principale:
+                  type:
+                    - string
+                    - "null"
+                caractere_employeur:
+                  type:
+                    - string
+                    - "null"
+                date_debut_activite:
+                  type:
+                    - string
+                    - "null"
+                tranche_effectif_salarie:
+                  type:
+                    - string
+                    - "null"
+                activite_principale_naf25:
+                  type:
+                    - string
+                    - "null"
+                annee_tranche_effectif_salarie:
+                  type:
+                    - string
+                    - "null"
+                statut_diffusion_etablissement:
+                  type:
+                    - string
+                    - "null"
+          tranche_effectif_salarie:
+            type:
+              - string
+              - "null"
+          activite_principale_naf25:
+            type:
+              - string
+              - "null"
+          annee_categorie_entreprise:
+            type:
+              - string
+              - "null"
+          section_activite_principale:
+            type:
+              - string
+              - "null"
+          nombre_etablissements_ouverts:
+            type:
+              - number
+              - "null"
+          annee_tranche_effectif_salarie:
+            type:
+              - string
+              - "null"
+          opposition_diffusion_commerciale:
+            type:
+              - boolean
+              - "null"
+        additionalProperties: true
+    transformations:
+      - type: AddFields
+        fields:
+          - type: AddedFieldDefinition
+            path:
+              - extract_department
+            value: "{{ stream_partition['department'] }}"
+          - type: AddedFieldDefinition
+            path:
+              - extracted_at
+            value: "{{ now_utc().strftime('%Y-%m-%dT%H:%M:%SZ') }}"
+
+spec:
+  type: Spec
+  connection_specification:
+    type: object
+    $schema: http://json-schema.org/draft-07/schema#
+    required:
+      - departements
+    properties:
+      departements:
+        type: array
+        description: >-
+          Codes département injectés dans le paramètre "departement". Commencer
+          par ["91"], puis ["75","77","78","91","92","93","94","95"].
+        items:
+          type: string
+        order: 0
+        title: Départements à extraire
+        default:
+          - "91"
+      etat_administratif:
+        type: string
+        description: A = actives uniquement (recommandé pour le dashboard), C = cessées.
+        enum:
+          - A
+          - C
+        order: 1
+        title: État administratif
+        default: A
+    additionalProperties: true
+
+metadata:
+  testedStreams:
+    API ESS -> Airbyte:
+      isStale: false
+      hasRecords: true
+      streamHash: c6dc7bc18d239a3405b184d285846fa844984dd8
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+  autoImportSchema: {}
+  applied_migrations:
+    - migration: HttpRequesterUrlBaseToUrl
+      to_version: "*"
+      migrated_at: "2026-11-08T11:44:03.994926+00:00"
+      from_version: 6.44.0
+    - migration: HttpRequesterPathToUrl
+      to_version: "*"
+      migrated_at: "2026-11-08T11:44:03.995018+00:00"
+      from_version: 6.44.0

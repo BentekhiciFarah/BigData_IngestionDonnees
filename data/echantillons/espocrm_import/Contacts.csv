@@ -1,0 +1,21 @@
+salutationName,firstName,lastName,title,accountName,emailAddress,phoneNumber,addressCity,addressPostalCode,addressCountry,description
+Mr.,Karim,Benali,Président,Les Jardins Partagés de Grigny,k.benali@jardins-grigny.example.org,+33 6 39 98 01 01,Grigny,91350,France,Bénévole fondateur de l'association.
+Ms.,Léa,Morvan,Coordinatrice,Les Jardins Partagés de Grigny,l.morvan@jardins-grigny.example.org,+33 6 39 98 01 02,Grigny,91350,France,Salariée en charge des projets pédagogiques.
+Ms.,Fatou,Diallo,Directrice,Solidarité Numérique Évry,f.diallo@solidarite-numerique-evry.example.org,+33 6 39 98 01 03,Évry-Courcouronnes,91000,France,Interlocutrice principale pour les conventions de financement.
+Mr.,Thomas,Lefèvre,Trésorier,Régie de Quartier des Tarterêts,t.lefevre@regie-tarterets.example.org,+33 6 39 98 01 04,Corbeil-Essonnes,91100,France,Bénévole ; suit les budgets des chantiers d'insertion.
+Ms.,Nadia,Haddad,Directrice,Régie de Quartier des Tarterêts,n.haddad@regie-tarterets.example.org,+33 6 39 98 01 05,Corbeil-Essonnes,91100,France,Pilote les marchés avec les bailleurs sociaux.
+Mr.,Julien,Garnier,Responsable atelier,Ressourcerie des Ulis,j.garnier@ressourcerie-ulis.example.org,+33 6 39 98 01 06,Les Ulis,91940,France,Encadrant technique de l'atelier de réparation.
+Ms.,Aminata,Sow,Directrice,Mission Insertion Saint-Denis,a.sow@mission-insertion-sd.example.org,+33 6 39 98 01 07,Saint-Denis,93200,France,Responsable des financements FSE.
+Mr.,Mehdi,Chaoui,Chargé de mission emploi,Mission Insertion Saint-Denis,m.chaoui@mission-insertion-sd.example.org,+33 6 39 98 01 08,Saint-Denis,93200,France,Relations avec les entreprises partenaires.
+Ms.,Clara,Petit,Cheffe de cuisine,Cuisine Mobile Aubervilliers,c.petit@cuisine-mobile-auber.example.org,+33 6 39 98 01 09,Aubervilliers,93300,France,Encadre l'équipe en insertion.
+Mr.,Samuel,Nkoulou,Directeur artistique,Compagnie Théâtre du Chêne Pointu,s.nkoulou@theatre-chene-pointu.example.org,+33 6 39 98 01 10,Clichy-sous-Bois,93390,France,Metteur en scène ; porte les dossiers DRAC.
+Mr.,Rachid,Belkacem,Président,Ateliers Vélo Sarcelles,r.belkacem@ateliers-velo-sarcelles.example.org,+33 6 39 98 01 11,Sarcelles,95200,France,Bénévole ; anime la vélo-école.
+Ms.,Inès,Rousseau,Responsable épicerie,Épicerie Solidaire du Val Fourré,i.rousseau@epicerie-val-fourre.example.org,+33 6 39 98 01 12,Mantes-la-Jolie,78200,France,Gère les approvisionnements et les bénévoles.
+Ms.,Sarah,Cohen,Directrice pédagogique,Trappes Codeurs,s.cohen@trappes-codeurs.example.org,+33 6 39 98 01 13,Trappes,78190,France,Conçoit les parcours de formation.
+Mr.,Yanis,Meziane,Chargé de partenariats,Trappes Codeurs,y.meziane@trappes-codeurs.example.org,+33 6 39 98 01 14,Trappes,78190,France,Recherche des entreprises mécènes.
+Ms.,Awa,Traoré,Coordinatrice,Maison des Parents de la Goutte d'Or,a.traore@maison-parents-go.example.org,+33 6 39 98 01 15,Paris,75018,France,Coordonne l'accompagnement scolaire.
+Dr.,Hélène,Marchand,Médecin coordinatrice,Coop Santé Champigny,h.marchand@coop-sante-champigny.example.org,+33 6 39 98 01 16,Champigny-sur-Marne,94500,France,Référente des programmes de prévention.
+Mr.,Pierre,Dubois,Directeur,Recyclerie de Gennevilliers,p.dubois@recyclerie-gennevilliers.example.org,+33 6 39 98 01 17,Gennevilliers,92230,France,Négocie les marchés de collecte.
+Ms.,Monique,Lambert,Présidente,Meaux Entraide Seniors,m.lambert@meaux-entraide-seniors.example.org,+33 6 39 98 01 18,Meaux,77100,France,Bénévole retraitée ; fondatrice de l'association.
+Mr.,Ousmane,Kane,Directeur,Centre Social Crescendo,o.kane@centre-social-crescendo.example.org,+33 6 39 98 01 19,Garges-lès-Gonesse,95140,France,Interlocuteur de la Préfecture et de la CAF.
+Ms.,Élodie,Martin,Chargée de projets jeunesse,Centre Social Crescendo,e.martin@centre-social-crescendo.example.org,+33 6 39 98 01 20,Garges-lès-Gonesse,95140,France,Anime les chantiers jeunes.

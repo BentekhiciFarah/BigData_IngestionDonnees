@@ -1,0 +1,402 @@
+>> ATTEMPT 1/1
+
+2026-11-12 15:47:29 info APPLY Stage: BUILD — (workloadId=e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check)
+2026-11-12 15:47:29 info APPLY Stage: CLAIM — (workloadId=e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check)
+2026-11-12 15:47:29 info Claimed: true for workload e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check via API in dataplane effbe697-2bea-4f5c-a2d6-af49b05d3273 (7f78a4e4-9727-4b3c-b81e-81278bee2ffc)
+2026-11-12 15:47:29 info APPLY Stage: LOAD_SHED — (workloadId=e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check)
+2026-11-12 15:47:29 info APPLY Stage: CHECK_STATUS — (workloadId=e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check)
+2026-11-12 15:47:29 info No pod found running for workload e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check
+2026-11-12 15:47:29 info APPLY Stage: MUTEX — (workloadId=e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check)
+2026-11-12 15:47:29 info No mutex key specified for workload: e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check. Continuing...
+2026-11-12 15:47:29 info APPLY Stage: ARCHITECTURE — (workloadId=e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check)
+2026-11-12 15:47:29 info APPLY Stage: LAUNCH — (workloadId=e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check)
+2026-11-12 15:47:29 info [initContainer] image: airbyte/workload-init-container:2.3.0 resources: ResourceRequirements(claims=[], limits={}, requests={memory=0, cpu=0}, additionalProperties={})
+2026-11-12 15:47:36 info Attempting to update workload: e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check to LAUNCHED.
+2026-11-12 15:47:36 info Pipeline completed for workload: e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check.
+2026-11-12 15:47:38 info 
+2026-11-12 15:47:38 info Transitioning workload to running state
+2026-11-12 15:47:39 info ----- START CHECK -----
+2026-11-12 15:47:39 info 
+2026-11-12 15:47:39 info Workload successfully transitioned to running state
+2026-11-12 15:47:40 info Connector exited, processing output
+2026-11-12 15:47:40 info Output file jobOutput.json found
+2026-11-12 15:47:40 info Connector exited with exit code 0
+2026-11-12 15:47:40 info Reading messages from protocol version 0.2.0
+2026-11-12 15:47:41 info MemoryMonitor instantiated with critical threshold: 95%, anon share of usage threshold: 85%, high-pressure threshold: 90%, check interval: 5000 messages (tightens to 100 under high pressure).
+2026-11-12 15:47:41 info Check succeeded
+2026-11-12 15:47:41 info Checking for optional control message...
+2026-11-12 15:47:41 info Writing output of e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check to the doc store
+2026-11-12 15:47:41 info Marking workload e08231c0-4c8a-4102-86c1-3ead08f64d36_27_0_check as successful
+2026-11-12 15:47:41 info Deliberately exiting process with code 0.
+2026-11-12 15:47:41 info 
+2026-11-12 15:47:41 info ----- END CHECK -----
+2026-11-12 15:47:41 info 
+2026-11-12 15:47:41 info APPLY Stage: BUILD — (workloadId=c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check)
+2026-11-12 15:47:41 info APPLY Stage: CLAIM — (workloadId=c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check)
+2026-11-12 15:47:41 info Claimed: true for workload c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check via API in dataplane effbe697-2bea-4f5c-a2d6-af49b05d3273 (7f78a4e4-9727-4b3c-b81e-81278bee2ffc)
+2026-11-12 15:47:41 info APPLY Stage: LOAD_SHED — (workloadId=c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check)
+2026-11-12 15:47:41 info APPLY Stage: CHECK_STATUS — (workloadId=c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check)
+2026-11-12 15:47:41 info No pod found running for workload c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check
+2026-11-12 15:47:41 info APPLY Stage: MUTEX — (workloadId=c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check)
+2026-11-12 15:47:41 info No mutex key specified for workload: c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check. Continuing...
+2026-11-12 15:47:41 info APPLY Stage: ARCHITECTURE — (workloadId=c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check)
+2026-11-12 15:47:41 info APPLY Stage: LAUNCH — (workloadId=c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check)
+2026-11-12 15:47:41 info [initContainer] image: airbyte/workload-init-container:2.3.0 resources: ResourceRequirements(claims=[], limits={}, requests={memory=0, cpu=0}, additionalProperties={})
+2026-11-12 15:47:48 info Attempting to update workload: c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check to LAUNCHED.
+2026-11-12 15:47:48 info Pipeline completed for workload: c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check.
+2026-11-12 15:47:51 info 
+2026-11-12 15:47:51 info Transitioning workload to running state
+2026-11-12 15:47:51 info ----- START CHECK -----
+2026-11-12 15:47:51 info 
+2026-11-12 15:47:51 info Workload successfully transitioned to running state
+2026-11-12 15:47:53 info Connector exited, processing output
+2026-11-12 15:47:53 info Output file jobOutput.json found
+2026-11-12 15:47:53 info Connector exited with exit code 0
+2026-11-12 15:47:53 info Reading messages from protocol version 0.2.0
+2026-11-12 15:47:53 info INFO main i.m.c.e.DefaultEnvironment(<init>):170 Established active environments: [k8s, cloud, cli, destination, aws, connector]
+2026-11-12 15:47:53 warn WARN main c.k.j.j.JsonSchemaGenerator$MyJsonFormatVisitorWrapper(expectAnyFormat):725 Not able to generate jsonSchema-info for type: [simple type, class com.fasterxml.jackson.databind.JsonNode] - probably using custom serializer which does not override acceptJsonFormatVisitor
+2026-11-12 15:47:53 info INFO main i.a.c.l.c.DataChannelBeanFactory(dataChannelMedium):60 Using data channel medium STDIO
+2026-11-12 15:47:53 info INFO main i.a.c.l.c.DataChannelBeanFactory(namespaceMapper):308 Going to use the given source value: SOURCE for namespace
+2026-11-12 15:47:53 info INFO main i.a.c.l.c.DestinationCatalog(<init>):51 Destination catalog initialized: [DestinationStream(unmappedNamespace=airbyte_internal_test_20261112mcxai, unmappedName=test20261112mcxai, importType=Append, schema=ObjectType(properties={test=FieldType(type=IntegerType, nullable=true)}, additionalProperties=true, required=[]), generationId=1, minimumGenerationId=0, syncId=1, isFileBased=false, includeFiles=false, destinationObjectName=null, matchingKey=null, namespaceMapper=io.airbyte.cdk.load.command.NamespaceMapper@62927deb)]
+2026-11-12 15:47:53 info INFO main i.a.c.AirbyteConnectorRunnable(run):35 Executing class io.airbyte.cdk.load.check.CheckOperation operation.
+2026-11-12 15:47:53 info INFO main i.a.c.l.f.s.S3ClientFactory(make):197 Creating S3 client using Kotlin SDK
+2026-11-12 15:47:53 info INFO main i.a.i.d.s.S3V2Checker$check$1(invokeSuspend):35 Checking if destination can write to dsid-raw/Raw-Ess-API/test/extraction_date=2026-11-12
+2026-11-12 15:47:53 info INFO main i.a.i.d.s.S3V2Checker$check$1(invokeSuspend):48 Successfully wrote test file: [S3Object(key=dsid-raw/Raw-Ess-API/test/extraction_date=2026-11-12/_EXAMPLE, storageConfig=S3BucketConfiguration(s3BucketName=dsid-raw, s3BucketRegion=eu-north-1, s3Endpoint=http://host.docker.internal:9000))]
+2026-11-12 15:47:53 info INFO main i.a.i.d.s.S3V2Checker$check$1(invokeSuspend):51 Successfully removed test file
+2026-11-12 15:47:53 info INFO main i.a.c.AirbyteConnectorRunnable(run):47 Flushing output consumer prior to shutdown.
+2026-11-12 15:47:53 info INFO main i.a.c.AirbyteConnectorRunnable(run):49 Completed integration: airbyte/destination-s3.
+2026-11-12 15:47:53 info Checking for optional control message...
+2026-11-12 15:47:53 info Writing output of c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check to the doc store
+2026-11-12 15:47:53 info Marking workload c8b1a1c2-b9e5-45aa-a614-78498d462d8e_27_0_check as successful
+2026-11-12 15:47:53 info 
+2026-11-12 15:47:53 info Deliberately exiting process with code 0.
+2026-11-12 15:47:53 info ----- END CHECK -----
+2026-11-12 15:47:53 info 
+2026-11-12 15:47:54 info APPLY Stage: BUILD — (workloadId=ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync)
+2026-11-12 15:47:54 info APPLY Stage: CLAIM — (workloadId=ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync)
+2026-11-12 15:47:54 info Claimed: true for workload ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync via API in dataplane effbe697-2bea-4f5c-a2d6-af49b05d3273 (7f78a4e4-9727-4b3c-b81e-81278bee2ffc)
+2026-11-12 15:47:54 info APPLY Stage: LOAD_SHED — (workloadId=ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync)
+2026-11-12 15:47:54 info APPLY Stage: CHECK_STATUS — (workloadId=ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync)
+2026-11-12 15:47:54 info No pod found running for workload ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync
+2026-11-12 15:47:54 info APPLY Stage: MUTEX — (workloadId=ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync)
+2026-11-12 15:47:54 info Mutex key: ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd specified for workload: ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync. Attempting to delete existing pods...
+2026-11-12 15:47:54 info Mutex key: ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd specified for workload: ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync found no existing pods. Continuing...
+2026-11-12 15:47:54 info APPLY Stage: ARCHITECTURE — (workloadId=ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync)
+2026-11-12 15:47:54 info Building STDIO environment: source IPC options missing
+2026-11-12 15:47:54 info APPLY Stage: LAUNCH — (workloadId=ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync)
+2026-11-12 15:47:54 info [initContainer] image: airbyte/workload-init-container:2.3.0 resources: ResourceRequirements(claims=[], limits={memory=4Gi, cpu=3}, requests={memory=0, cpu=0}, additionalProperties={})
+2026-11-12 15:47:54 info Launching replication pod: replication-job-27-attempt-0 (selectors = {}) with containers:
+2026-11-12 15:47:54 info [source] image: airbyte/source-declarative-manifest:7.28.2 resources: ResourceRequirements(claims=[], limits={memory=4Gi, cpu=3}, requests={memory=0, cpu=0}, additionalProperties={})
+2026-11-12 15:47:54 info [destination] image: airbyte/destination-s3:1.9.11 resources: ResourceRequirements(claims=[], limits={memory=4Gi, cpu=3}, requests={memory=2Gi, cpu=0}, additionalProperties={})
+2026-11-12 15:47:54 info [orchestrator] image: airbyte/container-orchestrator:2.3.0 resources: ResourceRequirements(claims=[], limits={memory=4Gi, cpu=3}, requests={memory=0, cpu=0}, additionalProperties={})
+2026-11-12 15:48:03 info Attempting to update workload: ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync to LAUNCHED.
+2026-11-12 15:48:03 info Pipeline completed for workload: ba679fc4-bc18-4f9b-86e0-9b1e92bbe3bd_27_0_sync.
+2026-11-12 15:48:07 info Running replication worker...
+2026-11-12 15:48:07 info Starting replication worker. job id: 27 attempt: 0
+2026-11-12 15:48:07 info 
+2026-11-12 15:48:07 info ----- START REPLICATION -----
+2026-11-12 15:48:07 info 
+2026-11-12 15:48:07 info Running destination...
+2026-11-12 15:48:07 info Writing messages to protocol version 0.2.0
+2026-11-12 15:48:07 info Reading messages from protocol version 0.2.0
+2026-11-12 15:48:07 info Reading messages from protocol version 0.2.0
+2026-11-12 15:48:07 info DestinationWriter started.
+2026-11-12 15:48:07 info MessageProcessor started.
+2026-11-12 15:48:07 info DestinationReader started.
+2026-11-12 15:48:07 info SourceReader started.
+2026-11-12 15:48:07 info Starting workload heartbeat (interval=10s; timeout=600s)
+2026-11-12 15:48:07 info Transitioning workload to running state
+2026-11-12 15:48:07 info Workload successfully transitioned to running state
+2026-11-12 15:48:07 info INFO main i.m.c.e.DefaultEnvironment(<init>):170 Established active environments: [k8s, cloud, cli, destination, aws, connector]
+2026-11-12 15:48:09 warn WARN main c.k.j.j.JsonSchemaGenerator$MyJsonFormatVisitorWrapper(expectAnyFormat):725 Not able to generate jsonSchema-info for type: [simple type, class com.fasterxml.jackson.databind.JsonNode] - probably using custom serializer which does not override acceptJsonFormatVisitor
+2026-11-12 15:48:09 info INFO main i.a.c.l.c.DataChannelBeanFactory(dataChannelMedium):60 Using data channel medium STDIO
+2026-11-12 15:48:09 info INFO main i.a.c.l.c.DataChannelBeanFactory(namespaceMapper):308 Going to use the given source value: SOURCE for namespace
+2026-11-12 15:48:09 info INFO main i.a.c.l.c.DestinationCatalog(<init>):51 Destination catalog initialized: [DestinationStream(unmappedNamespace=ApiEss, unmappedName=API ESS -> Airbyte, importType=Append, schema=ObjectType(properties={siege=FieldType(type=ObjectType(properties={epci=FieldType(type=StringType, nullable=true), cedex=FieldType(type=StringType, nullable=true), siret=FieldType(type=StringType, nullable=true), a_opco=FieldType(type=BooleanType, nullable=true), region=FieldType(type=StringType, nullable=true), adresse=FieldType(type=StringType, nullable=true), commune=FieldType(type=StringType, nullable=true), latitude=FieldType(type=StringType, nullable=true), est_siege=FieldType(type=BooleanType, nullable=true), liste_uai=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), longitude=FieldType(type=StringType, nullable=true), type_voie=FieldType(type=StringType, nullable=true), liste_idcc=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), code_postal=FieldType(type=StringType, nullable=true), coordonnees=FieldType(type=StringType, nullable=true), departement=FieldType(type=StringType, nullable=true), numero_voie=FieldType(type=StringType, nullable=true), libelle_voie=FieldType(type=StringType, nullable=true), liste_finess=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), liste_id_bio=FieldType(type=ArrayType(items=FieldType(type=NumberType, nullable=true)), nullable=true), date_creation=FieldType(type=StringType, nullable=true), libelle_cedex=FieldType(type=StringType, nullable=true), nom_commercial=FieldType(type=StringType, nullable=true), libelle_commune=FieldType(type=StringType, nullable=true), liste_enseignes=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), indice_repetition=FieldType(type=StringType, nullable=true), complement_adresse=FieldType(type=StringType, nullable=true), etat_administratif=FieldType(type=StringType, nullable=true), activite_principale=FieldType(type=StringType, nullable=true), caractere_employeur=FieldType(type=StringType, nullable=true), date_debut_activite=FieldType(type=StringType, nullable=true), dernier_numero_voie=FieldType(type=StringType, nullable=true), distribution_speciale=FieldType(type=StringType, nullable=true), date_mise_a_jour_insee=FieldType(type=StringType, nullable=true), tranche_effectif_salarie=FieldType(type=StringType, nullable=true), activite_principale_naf25=FieldType(type=StringType, nullable=true), annee_tranche_effectif_salarie=FieldType(type=StringType, nullable=true), statut_diffusion_etablissement=FieldType(type=StringType, nullable=true), activite_principale_registre_metier=FieldType(type=StringType, nullable=true)}, additionalProperties=false, required=[]), nullable=true), sigle=FieldType(type=StringType, nullable=true), siren=FieldType(type=StringType, nullable=true), complements=FieldType(type=ObjectType(properties={est_bio=FieldType(type=BooleanType, nullable=true), est_ess=FieldType(type=BooleanType, nullable=true), est_rge=FieldType(type=BooleanType, nullable=true), est_uai=FieldType(type=BooleanType, nullable=true), est_siae=FieldType(type=BooleanType, nullable=true), type_siae=FieldType(type=StringType, nullable=true), est_avocat=FieldType(type=BooleanType, nullable=true), est_finess=FieldType(type=BooleanType, nullable=true), liste_idcc=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), numero_rnf=FieldType(type=StringType, nullable=true), a_aide_ademe=FieldType(type=BooleanType, nullable=true), est_qualiopi=FieldType(type=BooleanType, nullable=true), a_aide_minimis=FieldType(type=BooleanType, nullable=true), est_association=FieldType(type=BooleanType, nullable=true), egapro_renseignee=FieldType(type=BooleanType, nullable=true), est_administration=FieldType(type=BooleanType, nullable=true), est_alim_confiance=FieldType(type=BooleanType, nullable=true), bilan_ges_renseigne=FieldType(type=BooleanType, nullable=true), est_societe_mission=FieldType(type=BooleanType, nullable=true), est_patrimoine_vivant=FieldType(type=BooleanType, nullable=true), liste_finess_juridique=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), est_achats_responsables=FieldType(type=BooleanType, nullable=true), est_organisme_formation=FieldType(type=BooleanType, nullable=true), identifiant_association=FieldType(type=StringType, nullable=true), est_entrepreneur_spectacle=FieldType(type=BooleanType, nullable=true), est_entrepreneur_individuel=FieldType(type=BooleanType, nullable=true), liste_id_organisme_formation=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), statut_entrepreneur_spectacle=FieldType(type=StringType, nullable=true), convention_collective_renseignee=FieldType(type=BooleanType, nullable=true)}, additionalProperties=false, required=[]), nullable=true), nom_complet=FieldType(type=StringType, nullable=true), extracted_at=FieldType(type=StringType, nullable=true), date_creation=FieldType(type=StringType, nullable=true), date_mise_a_jour=FieldType(type=StringType, nullable=true), nature_juridique=FieldType(type=StringType, nullable=true), statut_diffusion=FieldType(type=StringType, nullable=true), etat_administratif=FieldType(type=StringType, nullable=true), extract_department=FieldType(type=NumberType, nullable=true), nom_raison_sociale=FieldType(type=StringType, nullable=true), activite_principale=FieldType(type=StringType, nullable=true), categorie_entreprise=FieldType(type=StringType, nullable=true), date_mise_a_jour_rne=FieldType(type=StringType, nullable=true), nombre_etablissements=FieldType(type=NumberType, nullable=true), date_mise_a_jour_insee=FieldType(type=StringType, nullable=true), matching_etablissements=FieldType(type=ArrayType(items=FieldType(type=ObjectType(properties={epci=FieldType(type=StringType, nullable=true), siret=FieldType(type=StringType, nullable=true), a_opco=FieldType(type=BooleanType, nullable=true), region=FieldType(type=StringType, nullable=true), adresse=FieldType(type=StringType, nullable=true), commune=FieldType(type=StringType, nullable=true), latitude=FieldType(type=StringType, nullable=true), est_siege=FieldType(type=BooleanType, nullable=true), liste_uai=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), longitude=FieldType(type=StringType, nullable=true), liste_idcc=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), code_postal=FieldType(type=StringType, nullable=true), ancien_siege=FieldType(type=BooleanType, nullable=true), liste_finess=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), liste_id_bio=FieldType(type=ArrayType(items=FieldType(type=NumberType, nullable=true)), nullable=true), date_creation=FieldType(type=StringType, nullable=true), date_fermeture=FieldType(type=StringType, nullable=true), nom_commercial=FieldType(type=StringType, nullable=true), libelle_commune=FieldType(type=StringType, nullable=true), liste_enseignes=FieldType(type=ArrayType(items=FieldType(type=StringType, nullable=true)), nullable=true), etat_administratif=FieldType(type=StringType, nullable=true), activite_principale=FieldType(type=StringType, nullable=true), caractere_employeur=FieldType(type=StringType, nullable=true), date_debut_activite=FieldType(type=StringType, nullable=true), tranche_effectif_salarie=FieldType(type=StringType, nullable=true), activite_principale_naf25=FieldType(type=StringType, nullable=true), annee_tranche_effectif_salarie=FieldType(type=StringType, nullable=true), statut_diffusion_etablissement=FieldType(type=StringType, nullable=true)}, additionalProperties=false, required=[]), nullable=true)), nullable=true), tranche_effectif_salarie=FieldType(type=StringType, nullable=true), activite_principale_naf25=FieldType(type=StringType, nullable=true), annee_categorie_entreprise=FieldType(type=StringType, nullable=true), section_activite_principale=FieldType(type=StringType, nullable=true), nombre_etablissements_ouverts=FieldType(type=NumberType, nullable=true), annee_tranche_effectif_salarie=FieldType(type=StringType, nullable=true), opposition_diffusion_commerciale=FieldType(type=BooleanType, nullable=true)}, additionalProperties=true, required=[]), generationId=9, minimumGenerationId=9, syncId=27, isFileBased=false, includeFiles=false, destinationObjectName=null, matchingKey=null, namespaceMapper=io.airbyte.cdk.load.command.NamespaceMapper@a40a823f)]
+2026-11-12 15:48:10 info INFO main i.a.c.l.c.DataChannelBeanFactory(logPerNRecords):137 Logging every 100000 records
+2026-11-12 15:48:10 info INFO main i.a.c.l.c.DataChannelBeanFactory(dataChannelSocketPaths):69 Using socket paths []
+2026-11-12 15:48:10 info INFO main i.a.c.l.s.PipelineEventBookkeepingRouter(<init>):93 Creating bookkeeping router for 1 data channels
+2026-11-12 15:48:10 info INFO main i.a.c.l.f.s.S3ClientFactory(make):197 Creating S3 client using Kotlin SDK
+2026-11-12 15:48:10 info INFO main i.a.c.l.c.DataChannelBeanFactory(dataChannelFormat):79 Using data channel format JSONL
+2026-11-12 15:48:10 info INFO main i.a.c.AirbyteConnectorRunnable(run):35 Executing class io.airbyte.cdk.load.write.WriteOperation operation.
+2026-11-12 15:48:10 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):156 Starting input consumer task
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.internal.InputConsumerTask@2a7f3278)
+2026-11-12 15:48:10 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):161 Starting startup task
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.i.InputConsumerTask(execute):73 Starting consuming messages from the input flow
+2026-11-12 15:48:10 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):165 Launching open stream task 0
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.i.ReservingDeserializingInputFlow(collect):32 Reserved 4691mb memory for input processing
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.implementor.SetupTask@3b788ce3)
+2026-11-12 15:48:10 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):169 Setting up load pipeline
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.implementor.SetupTask@3b788ce3) completed
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.implementor.OpenStreamTask@7ceba8d8)
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartFormatter, part=1))
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartFormatter, part=0))
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartLoader, part=0))
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartLoader, part=1))
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartLoader, part=3))
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartLoader, part=4))
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartLoader, part=2))
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderUploadCompleter, part=0))
+2026-11-12 15:48:10 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):171 Launching update batch task
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.internal.UpdateBatchStateTask@1a17f365)
+2026-11-12 15:48:10 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):174 Launching heartbeat task
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.internal.HeartbeatTask@55ed046c)
+2026-11-12 15:48:10 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):183 Starting checkpoint update task
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.internal.UpdateCheckpointsTask@5b0f05e2)
+2026-11-12 15:48:10 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.i.UpdateCheckpointsTask(execute):34 Starting to consume checkpoint messages (state) for updating
+2026-11-12 15:48:11 info MemoryMonitor instantiated with critical threshold: 95%, anon share of usage threshold: 85%, high-pressure threshold: 90%, check interval: 5000 messages (tightens to 100 under high pressure).
+2026-11-12 15:48:11 info Starting syncing
+2026-11-12 15:48:11 info Marking stream API ESS -> Airbyte as STARTED
+2026-11-12 15:48:11 info Syncing stream: API ESS -> Airbyte
+2026-11-12 15:48:11 info Marking stream API ESS -> Airbyte as RUNNING
+2026-11-12 15:48:11 info Stream status TRACE received of status: STARTED for stream API ESS -> Airbyte
+2026-11-12 15:48:11 info Sending update for API ESS -> Airbyte - null -> RUNNING
+2026-11-12 15:48:11 info Stream Status Update Received: API ESS -> Airbyte - RUNNING
+2026-11-12 15:48:11 info Creating status: API ESS -> Airbyte - RUNNING
+2026-11-12 15:48:11 info Stream status TRACE received of status: RUNNING for stream API ESS -> Airbyte
+2026-11-12 15:48:12 info INFO DefaultDispatcher-worker-1 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):114 Saw first record for stream Descriptor(namespace=ApiEss, name=API ESS -> Airbyte); awaiting setup complete
+2026-11-12 15:48:12 info INFO DefaultDispatcher-worker-1 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):118 Setup complete, starting stream Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 15:48:12 info INFO DefaultDispatcher-worker-6 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):121 Initialization for stream Descriptor(namespace=ApiEss, name=API ESS -> Airbyte) complete
+2026-11-12 15:48:12 info INFO DefaultDispatcher-worker-8 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-120.jsonl (Descriptor(namespace=ApiEss, name=API ESS -> Airbyte))
+2026-11-12 15:49:10 info INFO DefaultDispatcher-worker-5 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:49:44 info INFO DefaultDispatcher-worker-4 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-120.jsonl', size=20974623, index=1, isFinal=false), state=PROCESSED)
+2026-11-12 15:49:45 info Records read: 5000 (19 MB)
+2026-11-12 15:50:10 info INFO DefaultDispatcher-worker-8 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:51:09 info Records read: 10000 (37 MB)
+2026-11-12 15:51:09 info INFO DefaultDispatcher-worker-3 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-121.jsonl (Descriptor(namespace=ApiEss, name=API ESS -> Airbyte))
+2026-11-12 15:51:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:52:10 info INFO DefaultDispatcher-worker-1 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:52:36 info Records read: 15000 (54 MB)
+2026-11-12 15:52:44 info INFO DefaultDispatcher-worker-1 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-121.jsonl', size=20973607, index=1, isFinal=false), state=PROCESSED)
+2026-11-12 15:53:10 info INFO DefaultDispatcher-worker-1 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:54:02 info Records read: 20000 (72 MB)
+2026-11-12 15:54:02 info INFO DefaultDispatcher-worker-4 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-120.jsonl', size=19540551, index=2, isFinal=true), state=PROCESSED)
+2026-11-12 15:54:02 info INFO DefaultDispatcher-worker-3 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-122.jsonl (Descriptor(namespace=ApiEss, name=API ESS -> Airbyte))
+2026-11-12 15:54:03 info INFO DefaultDispatcher-worker-4 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 2 (isFinal=true) completes dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-120.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-120.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@389a7c95))
+2026-11-12 15:54:03 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:54:10 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:55:10 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:55:27 info INFO DefaultDispatcher-worker-3 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-122.jsonl', size=20972609, index=1, isFinal=false), state=PROCESSED)
+2026-11-12 15:55:28 info Records read: 25000 (92 MB)
+2026-11-12 15:56:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:56:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-121.jsonl', size=17648292, index=2, isFinal=true), state=PROCESSED)
+2026-11-12 15:56:10 info INFO DefaultDispatcher-worker-1 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 2 (isFinal=true) completes dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-121.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-121.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@2e413fc1))
+2026-11-12 15:56:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:57:03 info Records read: 30000 (109 MB)
+2026-11-12 15:57:04 info INFO DefaultDispatcher-worker-1 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-123.jsonl (Descriptor(namespace=ApiEss, name=API ESS -> Airbyte))
+2026-11-12 15:57:10 info INFO DefaultDispatcher-worker-1 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:58:10 info INFO DefaultDispatcher-worker-1 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:58:35 info Records read: 35000 (126 MB)
+2026-11-12 15:58:47 info INFO DefaultDispatcher-worker-4 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-123.jsonl', size=20972768, index=1, isFinal=false), state=PROCESSED)
+2026-11-12 15:59:10 info INFO DefaultDispatcher-worker-1 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 15:59:10 info INFO DefaultDispatcher-worker-4 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-122.jsonl', size=19679241, index=2, isFinal=true), state=PROCESSED)
+2026-11-12 15:59:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 2 (isFinal=true) completes dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-122.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-122.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@554ac034))
+2026-11-12 15:59:10 info INFO DefaultDispatcher-worker-5 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:00:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:00:24 info Records read: 40000 (146 MB)
+2026-11-12 16:00:24 info INFO DefaultDispatcher-worker-3 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-124.jsonl (Descriptor(namespace=ApiEss, name=API ESS -> Airbyte))
+2026-11-12 16:01:10 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:02:01 info INFO DefaultDispatcher-worker-2 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-124.jsonl', size=20974440, index=1, isFinal=false), state=PROCESSED)
+2026-11-12 16:02:05 info Records read: 45000 (166 MB)
+2026-11-12 16:02:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:02:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-123.jsonl', size=19111238, index=2, isFinal=true), state=PROCESSED)
+2026-11-12 16:02:10 info INFO DefaultDispatcher-worker-4 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 2 (isFinal=true) completes dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-123.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-123.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@3419979c))
+2026-11-12 16:02:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:03:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:03:47 info INFO DefaultDispatcher-worker-2 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-124.jsonl', size=20971636, index=2, isFinal=false), state=PROCESSED)
+2026-11-12 16:03:54 info Records read: 50000 (185 MB)
+2026-11-12 16:03:54 info INFO DefaultDispatcher-worker-5 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-125.jsonl (Descriptor(namespace=ApiEss, name=API ESS -> Airbyte))
+2026-11-12 16:04:10 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:05:10 info INFO DefaultDispatcher-worker-8 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:05:28 info Records read: 55000 (203 MB)
+2026-11-12 16:05:35 info INFO DefaultDispatcher-worker-8 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-125.jsonl', size=20972851, index=1, isFinal=false), state=PROCESSED)
+2026-11-12 16:06:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:06:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-124.jsonl', size=1073737, index=3, isFinal=true), state=PROCESSED)
+2026-11-12 16:06:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 3 (isFinal=true) completes dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-124.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-124.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@6628a1bd))
+2026-11-12 16:06:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:07:06 info Records read: 60000 (221 MB)
+2026-11-12 16:07:06 info INFO DefaultDispatcher-worker-8 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-126.jsonl (Descriptor(namespace=ApiEss, name=API ESS -> Airbyte))
+2026-11-12 16:07:10 info INFO DefaultDispatcher-worker-8 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:08:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:09:06 info Records read: 65000 (240 MB)
+2026-11-12 16:09:08 info INFO DefaultDispatcher-worker-5 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-126.jsonl', size=20975035, index=1, isFinal=false), state=PROCESSED)
+2026-11-12 16:09:10 info INFO DefaultDispatcher-worker-8 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:09:10 info INFO DefaultDispatcher-worker-8 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-125.jsonl', size=18282853, index=2, isFinal=true), state=PROCESSED)
+2026-11-12 16:09:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 2 (isFinal=true) completes dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-125.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-125.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@7ff5c35a))
+2026-11-12 16:09:10 info INFO DefaultDispatcher-worker-3 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:10:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:10:50 info Records read: 70000 (257 MB)
+2026-11-12 16:10:51 info INFO DefaultDispatcher-worker-8 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-127.jsonl (Descriptor(namespace=ApiEss, name=API ESS -> Airbyte))
+2026-11-12 16:11:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:12:10 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:12:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-126.jsonl', size=18724720, index=2, isFinal=true), state=PROCESSED)
+2026-11-12 16:12:10 info INFO DefaultDispatcher-worker-5 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 2 (isFinal=true) completes dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-126.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-126.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@7ca24b8e))
+2026-11-12 16:12:10 info INFO DefaultDispatcher-worker-5 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:12:15 info Records read: 75000 (275 MB)
+2026-11-12 16:12:24 info INFO DefaultDispatcher-worker-1 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-127.jsonl', size=20974180, index=1, isFinal=false), state=PROCESSED)
+2026-11-12 16:13:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:14:09 info Read 80000 records from API ESS -> Airbyte stream
+2026-11-12 16:14:09 info Records read: 80000 (292 MB)
+2026-11-12 16:14:09 info Marking stream API ESS -> Airbyte as STOPPED
+2026-11-12 16:14:09 info Finished syncing API ESS -> Airbyte
+2026-11-12 16:14:09 info Stream completed: null.API ESS -> Airbyte
+2026-11-12 16:14:09 info Current stream completion status: {io.airbyte.protocol.models.v0.StreamDescriptor@286f9ca2[name=API ESS -> Airbyte,namespace=<null>,additionalProperties={}]=false}
+2026-11-12 16:14:09 info Stream status TRACE received of status: COMPLETE for stream API ESS -> Airbyte
+2026-11-12 16:14:09 info Finished syncing
+2026-11-12 16:14:10 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:14:19 info Total records read: (292 MB)
+2026-11-12 16:14:19 info Schema validation was performed to a max of 10 records with errors per stream.
+2026-11-12 16:14:19 info SourceReader finished.
+2026-11-12 16:14:19 info Source queue closed — stopping message processor...
+2026-11-12 16:14:19 info MessageProcessor finished.
+2026-11-12 16:14:19 info DestinationWriter finished.
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):139 Read COMPLETE for stream Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.i.ReservingDeserializingInputFlow(collect):55 Finished processing input
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.s.PipelineEventBookkeepingRouter(close):290 Maybe closing bookkeeping router 1
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.s.PipelineEventBookkeepingRouter(close):311 Closing internal control channels
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte): record-part-formatter-step[0]
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-2 i.a.c.l.t.i.UpdateCheckpointsTask$execute$3(emit):39 Updating stream checkpoint Descriptor(namespace=ApiEss, name=API ESS -> Airbyte):CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1)):Stats(recordCount=80000, rejectedRecordCount=0, additionalStats={})
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-8 i.a.c.l.s.CheckpointManager(flushReadyCheckpointMessages):146 No checkpoints to flush
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-8 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-127.jsonl', size=17267168, index=2, isFinal=true), state=PROCESSED)
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-2 i.a.c.l.s.CheckpointManager(addStreamCheckpoint):116 Added checkpoint for stream: Descriptor(namespace=ApiEss, name=API ESS -> Airbyte) at index: CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1))
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.m.MultiProducerChannel(close):26 Closing producer fileMessageQueue (active count=0, initialized count: 1)
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.m.MultiProducerChannel(close):30 Closing underlying queue
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.internal.InputConsumerTask@2a7f3278) completed
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.implementor.OpenStreamTask@7ceba8d8) completed
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartFormatter, part=0)) completed
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-2 i.a.c.l.t.i.UpdateCheckpointsTask(execute):68 All checkpoints (state) updated
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-2 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.internal.UpdateCheckpointsTask@5b0f05e2) completed
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderPartFormatter, part=1) saw end-of-stream for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte) after 40000 inputs, all workers complete
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartFormatter, part=1)) completed
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte): record-part-loader-step[1]
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte): record-part-loader-step[2]
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte): record-part-loader-step[3]
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte): record-part-formatter-step[1]
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte): record-part-loader-step[0]
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderPartLoader, part=4) saw end-of-stream for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte) after 3 inputs, all workers complete
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-12 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 2 (isFinal=true) completes dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-127.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date=2026-11-127.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@19e391ba))
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte): record-part-loader-step[4]
+2026-11-12 16:14:19 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderUploadCompleter, part=0) saw end-of-stream for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte) after 28 inputs, all workers complete
+2026-11-12 16:14:20 info Destination complete for API ESS -> Airbyte
+2026-11-12 16:14:20 info Sending update for API ESS -> Airbyte - RUNNING -> COMPLETE
+2026-11-12 16:14:20 info Stream Status Update Received: API ESS -> Airbyte - COMPLETE
+2026-11-12 16:14:20 info Updating status: API ESS -> Airbyte - COMPLETE
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.s.CheckpointManager(flushStreamCheckpoints):364 Flushed checkpoint for stream: Descriptor(namespace=ApiEss, name=API ESS -> Airbyte) at index: CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1)) (records=80000, bytes=315849089)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):204 Batch processing complete: Starting close stream task for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.implementor.CloseStreamTask@5e0626c)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.w.o.ObjectStorageStreamLoader(close):45 Truncate sync succeeded, Removing old files
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.w.o.ObjectStorageStreamLoader(close):47 Deleting old objects
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte): final-step[0]
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=ApiEss, name=API ESS -> Airbyte)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.s.o.ObjectStorageDestinationState(getObjectsToDelete):63 Searching dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/extraction_date= for objects to delete (minGenId=9; matcher=dsid-raw/Raw-Ess-API/(\QAPI_ESS_-__Airbyte\E)/extraction_date=(\d{4})-(\d{2})-(\d{2})(\d+)(.jsonl)(-[0-9]+)?)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-11 i.a.c.l.w.o.ObjectStorageStreamLoader(close):49 Persisting state
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-11 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.implementor.CloseStreamTask@5e0626c) completed
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.implementor.TeardownTask@12625621)
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.TeardownTask(execute):35 Teardown task awaiting stream processing completion
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.TeardownTask(execute):41 All streams processed successfully, awaiting all checkpoints flushed
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.s.CheckpointManager(awaitAllCheckpointsFlushed):426 All checkpoints flushed
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.TeardownTask(execute):43 Starting teardown task
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.TeardownTask(execute):45 Teardown task complete, marking sync succeeded.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.implementor.TeardownTask@12625621) completed
+2026-11-12 16:14:20 info INFO main i.a.c.l.t.TaskScopeProvider(close):45 Closing normally, canceling long-running tasks
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderPartLoader, part=3) was cancelled.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderPartLoader, part=1) was cancelled.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-11 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderPartLoader, part=0) was cancelled.
+2026-11-12 16:14:20 info INFO main i.a.c.l.t.TaskScopeProvider(close):48 Verifying task completion
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderPartLoader, part=2) was cancelled.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task io.airbyte.cdk.load.task.internal.HeartbeatTask@55ed046c was cancelled.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-9 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task io.airbyte.cdk.load.task.internal.UpdateBatchStateTask@1a17f365 was cancelled.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-2 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderPartLoader, part=4) was cancelled.
+2026-11-12 16:14:20 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderUploadCompleter, part=0) was cancelled.
+2026-11-12 16:14:20 info INFO main i.a.c.l.w.WriteOperation$execute$1(invokeSuspend):65 Destination completed successfully and all streams were complete.
+2026-11-12 16:14:20 info INFO main i.a.c.AirbyteConnectorRunnable(run):47 Flushing output consumer prior to shutdown.
+2026-11-12 16:14:20 info INFO main i.a.c.AirbyteConnectorRunnable(run):49 Completed integration: airbyte/destination-s3.
+2026-11-12 16:14:32 info DestinationReader finished.
+2026-11-12 16:14:32 info Closing StateCheckSumCountEventHandler
+2026-11-12 16:14:32 info No checksum errors were reported in the entire sync.
+2026-11-12 16:14:32 info Sync summary: {
+  "status" : "completed",
+  "recordsSynced" : 80000,
+  "bytesSynced" : 306729089,
+  "startTime" : 1794494887173,
+  "endTime" : 1794496472361,
+  "totalStats" : {
+    "additionalStats" : { },
+    "bytesCommitted" : 306729089,
+    "bytesEmitted" : 306729089,
+    "destinationStateMessagesEmitted" : 1,
+    "destinationWriteEndTime" : 1794496472228,
+    "destinationWriteStartTime" : 1794494887261,
+    "meanSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBeforeSourceStateMessageEmitted" : 1,
+    "maxSecondsBetweenStateMessageEmittedandCommitted" : 11,
+    "meanSecondsBetweenStateMessageEmittedandCommitted" : 11,
+    "recordsEmitted" : 80000,
+    "recordsCommitted" : 80000,
+    "recordsFilteredOut" : 0,
+    "bytesFilteredOut" : 0,
+    "replicationEndTime" : 1794496472233,
+    "replicationStartTime" : 1794494887173,
+    "sourceReadEndTime" : 1794496459447,
+    "sourceReadStartTime" : 1794494887262,
+    "sourceStateMessagesEmitted" : 1
+  },
+  "streamStats" : [ {
+    "streamName" : "API ESS -> Airbyte",
+    "stats" : {
+      "additionalStats" : {
+        "sourceFieldsPopulated" : 1688455
+      },
+      "bytesCommitted" : 306729089,
+      "bytesEmitted" : 306729089,
+      "estimatedBytes" : 0,
+      "estimatedRecords" : 0,
+      "recordsEmitted" : 80000,
+      "recordsCommitted" : 80000,
+      "recordsFilteredOut" : 0,
+      "bytesFilteredOut" : 0
+    }
+  } ],
+  "performanceMetrics" : { },
+  "streamCount" : 1
+}
+2026-11-12 16:14:32 info Failures: [ ]
+2026-11-12 16:14:32 info 
+2026-11-12 16:14:32 info Closing io.micronaut.context.propagation.instrument.execution.ContextPropagatingExecutorService@6ea3a513
+2026-11-12 16:14:32 info ----- END REPLICATION -----
+2026-11-12 16:14:32 info Closing io.micronaut.context.propagation.instrument.execution.ContextPropagatingExecutorService@3c4059a
+2026-11-12 16:14:32 info 
+2026-11-12 16:14:32 info Closing io.airbyte.container.orchestrator.worker.io.LocalContainerAirbyteDestination@4b336cc8
+2026-11-12 16:14:32 info Closing io.airbyte.container.orchestrator.worker.io.LocalContainerAirbyteSource@2f6f4ac4
+2026-11-12 16:14:32 info Closing io.airbyte.container.orchestrator.worker.RecordSchemaValidator@49e62b17
+2026-11-12 16:14:32 info Closing io.airbyte.container.orchestrator.persistence.SyncPersistenceImpl@288409f0
+2026-11-12 16:14:32 info Returning output...
+2026-11-12 16:14:32 info 
+----- START POST REPLICATION OPERATIONS -----
+
+
+2026-11-12 16:14:32 info No post-replication operation(s) to perform.
+2026-11-12 16:14:32 info 
+----- END POST REPLICATION OPERATIONS -----
+
+
+
+
+

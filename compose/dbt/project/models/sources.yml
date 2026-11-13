@@ -1,0 +1,13 @@
+version: 2
+sources:
+  - name: crm
+    schema: crm
+    tables:
+      - name: account
+models:
+  - name: comptes_actifs
+    columns:
+      - name: id
+        data_tests: [not_null, unique]
+      - name: name
+        data_tests: [not_null]

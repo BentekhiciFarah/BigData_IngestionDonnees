@@ -1,0 +1,86 @@
+{
+    "lot":  "api_ess",
+    "source":  "API Recherche d\u0027entreprises - unités ESS actives, Île-de-France",
+    "url_source":  "https://recherche-entreprises.api.gouv.fr/search?est_ess=true",
+    "licence":  "Licence Ouverte Etalab 2.0",
+    "chemin_minio":  "dsid-raw/Raw-Ess-API/API_ESS_-__Airbyte/",
+    "outil_collecte":  "Airbyte Connector Builder -\u003e destination S3 (MinIO), JSONL",
+    "date_collecte":  "\u003cdate \u0027Last Modified\u0027 affichée dans MinIO\u003e",
+    "date_manifeste":  "2026-11-13T19:19:42+01:00",
+    "nb_fichiers":  8,
+    "nb_lignes_total":  80000,
+    "fichiers":  [
+                     {
+                         "fichier_original":  "extraction_date=2026-11-120.jsonl",
+                         "taille_octets":  40515174,
+                         "nb_lignes":  10001,
+                         "sha256_original":  "a3a545677faa99e36c6e6bd9c79ea372614dd4a321ec9cd5c8a89b5c20730a73",
+                         "fichier_rendu":  "data/echantillons/api_ess/echantillon_100_extraction_date=2026-11-120.jsonl",
+                         "type_rendu":  "échantillon (100 premières lignes)",
+                         "sha256_rendu":  "ccb99b5a70b161e2fc23da63031f60a40e15288c1a70b1aa3304294b209524bb"
+                     },
+                     {
+                         "fichier_original":  "extraction_date=2026-11-121.jsonl",
+                         "taille_octets":  38621899,
+                         "nb_lignes":  10000,
+                         "sha256_original":  "aacb39570222caa61b01a92dcf707b26bfa84dded462be308a7c287032b01206",
+                         "fichier_rendu":  "data/echantillons/api_ess/echantillon_100_extraction_date=2026-11-121.jsonl",
+                         "type_rendu":  "échantillon (100 premières lignes)",
+                         "sha256_rendu":  "ac61d44d07c6daf6478ba7ae7ff4a099b38912b5aa08d7619f0f7bd9a6e487b1"
+                     },
+                     {
+                         "fichier_original":  "extraction_date=2026-11-122.jsonl",
+                         "taille_octets":  40651850,
+                         "nb_lignes":  9999,
+                         "sha256_original":  "cb22db30884b0756cd02933af878aca10b20e5d9de19ee675e2bcfe3caca6b35",
+                         "fichier_rendu":  "data/echantillons/api_ess/echantillon_100_extraction_date=2026-11-122.jsonl",
+                         "type_rendu":  "échantillon (100 premières lignes)",
+                         "sha256_rendu":  "f0be3eb75e2b413a3ee91ba79ed187b9c8629c624576a1d1a7af15130410fbf9"
+                     },
+                     {
+                         "fichier_original":  "extraction_date=2026-11-123.jsonl",
+                         "taille_octets":  40084006,
+                         "nb_lignes":  10000,
+                         "sha256_original":  "d77e9704001889e20c04af4d1aa7fde4cd7d2baec111fe5e70ba10d7f63de46d",
+                         "fichier_rendu":  "data/echantillons/api_ess/echantillon_100_extraction_date=2026-11-123.jsonl",
+                         "type_rendu":  "échantillon (100 premières lignes)",
+                         "sha256_rendu":  "d07e97573020c89b1e21a449f6d10c32c604026c3e3f9d0c54c21eda56f3c786"
+                     },
+                     {
+                         "fichier_original":  "extraction_date=2026-11-124.jsonl",
+                         "taille_octets":  43019813,
+                         "nb_lignes":  10000,
+                         "sha256_original":  "622812684f05f6eca1089b2da841052850d1eaa4bc628a3da0caecde167a644e",
+                         "fichier_rendu":  "data/echantillons/api_ess/echantillon_100_extraction_date=2026-11-124.jsonl",
+                         "type_rendu":  "échantillon (100 premières lignes)",
+                         "sha256_rendu":  "1d6b6ac294e21bd19e435673238d494d3b9459341bb4eee88f5ebfb99faee671"
+                     },
+                     {
+                         "fichier_original":  "extraction_date=2026-11-125.jsonl",
+                         "taille_octets":  39255704,
+                         "nb_lignes":  10000,
+                         "sha256_original":  "a393619b6b6d69dfdd462279077ad669b2986230cd06da4df33ba4247e5a267e",
+                         "fichier_rendu":  "data/echantillons/api_ess/echantillon_100_extraction_date=2026-11-125.jsonl",
+                         "type_rendu":  "échantillon (100 premières lignes)",
+                         "sha256_rendu":  "997f06d1ee4f3115712d19cbdfd15fb6e80029ed4b2b81d2590c0a24ac068ec3"
+                     },
+                     {
+                         "fichier_original":  "extraction_date=2026-11-126.jsonl",
+                         "taille_octets":  39699755,
+                         "nb_lignes":  10000,
+                         "sha256_original":  "7108e45cf1e8e07e57cf44a94c462d3661c9d23f8281b26c69a0d424f8206373",
+                         "fichier_rendu":  "data/echantillons/api_ess/echantillon_100_extraction_date=2026-11-126.jsonl",
+                         "type_rendu":  "échantillon (100 premières lignes)",
+                         "sha256_rendu":  "172ff48ede16ebac756d26d61b5dac3a66132989a01431a71b9ccb581f10ddd0"
+                     },
+                     {
+                         "fichier_original":  "extraction_date=2026-11-127.jsonl",
+                         "taille_octets":  38241348,
+                         "nb_lignes":  10000,
+                         "sha256_original":  "5ed3a8400fa985abdcbb5b15db0f26bdae074bb406edb686c464f4673c6cd701",
+                         "fichier_rendu":  "data/echantillons/api_ess/echantillon_100_extraction_date=2026-11-127.jsonl",
+                         "type_rendu":  "échantillon (100 premières lignes)",
+                         "sha256_rendu":  "0453dcc18ec3076c93690b9b1285c602230f88349fdf913d28b7a5df365200f1"
+                     }
+                 ]
+}

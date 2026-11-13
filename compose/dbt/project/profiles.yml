@@ -1,0 +1,12 @@
+dsid_tp:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      port: 5432
+      user: dsid
+      password: "{{ env_var('DBT_POSTGRES_PASSWORD') }}"
+      dbname: dsid
+      schema: mart
+      threads: 2

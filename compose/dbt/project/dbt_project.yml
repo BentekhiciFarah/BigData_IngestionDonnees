@@ -1,0 +1,9 @@
+name: dsid_tp
+version: '1.0.0'
+config-version: 2
+profile: dsid_tp
+model-paths: [models]
+test-paths: [tests]
+models:
+  dsid_tp:
+    +materialized: table

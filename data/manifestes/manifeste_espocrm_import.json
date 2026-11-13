@@ -1,0 +1,41 @@
+{
+    "lot":  "espocrm_import",
+    "source":  "Fichiers CSV importés dans EspoCRM",
+    "url_source":  "-",
+    "licence":  "Données fictives créées pour le projet",
+    "chemin_minio":  "-",
+    "outil_collecte":  "Import manuel dans EspoCRM (Administration -\u003e Import)",
+    "date_collecte":  "\u003cdate \u0027Last Modified\u0027 affichée dans MinIO\u003e",
+    "date_manifeste":  "2026-11-13T19:19:42+01:00",
+    "nb_fichiers":  3,
+    "nb_lignes_total":  58,
+    "fichiers":  [
+                     {
+                         "fichier_original":  "Accounts.csv",
+                         "taille_octets":  4516,
+                         "nb_lignes":  16,
+                         "sha256_original":  "87c4415712a40d7fc7de699194cab5754c4bfc69b3d54ad17ac326fd3fad2475",
+                         "fichier_rendu":  "data/echantillons/espocrm_import/Accounts.csv",
+                         "type_rendu":  "fichier complet",
+                         "sha256_rendu":  "87c4415712a40d7fc7de699194cab5754c4bfc69b3d54ad17ac326fd3fad2475"
+                     },
+                     {
+                         "fichier_original":  "Contacts.csv",
+                         "taille_octets":  3948,
+                         "nb_lignes":  21,
+                         "sha256_original":  "9f62366f4b1456d9cdc75e0f7beaff504269a977cf3c17de7fe27b1b6b5d0c1b",
+                         "fichier_rendu":  "data/echantillons/espocrm_import/Contacts.csv",
+                         "type_rendu":  "fichier complet",
+                         "sha256_rendu":  "9f62366f4b1456d9cdc75e0f7beaff504269a977cf3c17de7fe27b1b6b5d0c1b"
+                     },
+                     {
+                         "fichier_original":  "Opportunités.csv",
+                         "taille_octets":  3591,
+                         "nb_lignes":  21,
+                         "sha256_original":  "e0219609b3030e6d62ee6188852800108ec4db3166b074a850b8009998f5d022",
+                         "fichier_rendu":  "data/echantillons/espocrm_import/Opportunités.csv",
+                         "type_rendu":  "fichier complet",
+                         "sha256_rendu":  "e0219609b3030e6d62ee6188852800108ec4db3166b074a850b8009998f5d022"
+                     }
+                 ]
+}

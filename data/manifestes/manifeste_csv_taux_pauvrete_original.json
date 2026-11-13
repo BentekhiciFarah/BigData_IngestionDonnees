@@ -1,0 +1,23 @@
+{
+    "lot":  "csv_taux_pauvrete_original",
+    "source":  "Taux de pauvreté par commune - fichier CSV original",
+    "url_source":  "https://www.data.gouv.fr/api/1/datasets/r/5da6042e-bd4c-4a9f-bea6-1f0ba43ef24d",
+    "licence":  "http://opendatacommons.org/licenses/odbl/summary/",
+    "chemin_minio":  "dsid-raw/original/",
+    "outil_collecte":  "Téléchargement direct + upload dans MinIO via Airbyte",
+    "date_collecte":  "\u003cdate \u0027Last Modified\u0027 affichée dans MinIO\u003e",
+    "date_manifeste":  "2026-11-13T19:19:42+01:00",
+    "nb_fichiers":  1,
+    "nb_lignes_total":  34876,
+    "fichiers":  [
+                     {
+                         "fichier_original":  "taux-de-pauvrete-commune.csv",
+                         "taille_octets":  1769003,
+                         "nb_lignes":  34876,
+                         "sha256_original":  "23e2f3a79aeffbfc5076d76c3729d39a25cc5b7407f907b38f7ada58c7d12e4a",
+                         "fichier_rendu":  "data/echantillons/csv_taux_pauvrete_original/taux-de-pauvrete-commune.csv",
+                         "type_rendu":  "fichier complet",
+                         "sha256_rendu":  "23e2f3a79aeffbfc5076d76c3729d39a25cc5b7407f907b38f7ada58c7d12e4a"
+                     }
+                 ]
+}

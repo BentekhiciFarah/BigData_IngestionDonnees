@@ -1,0 +1,43 @@
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+Set-Location $PSScriptRoot
+$env:DO_NOT_TRACK = '1'
+$script:Abctl = Join-Path $PSScriptRoot '.tools\abctl.exe'
+function Invoke-Native {
+    param([string]$Exe, [string[]]$Arguments)
+    & $Exe @Arguments
+    if ($LASTEXITCODE -ne 0) { throw "Echec de $Exe (code $LASTEXITCODE)." }
+}
+function Test-Container {
+    param([string]$Name)
+    & cmd.exe /d /c "docker container inspect `"$Name`" >nul 2>&1"
+    return ($LASTEXITCODE -eq 0)
+}
+function Test-Prerequisites {
+    if (-not (Get-Command docker -ErrorAction SilentlyContinue)) { throw 'Installer Docker Desktop.' }
+    Invoke-Native docker @('info', '--format', '{{.ServerVersion}}')
+    $osType = & docker info --format '{{.OSType}}'
+    if ($LASTEXITCODE -ne 0 -or $osType -ne 'linux') { throw 'Demarrer Docker Desktop en mode conteneurs Linux.' }
+    Invoke-Native docker @('compose', 'version')
+}
+function Test-Environment {
+    if (-not (Test-Path '.env')) { throw 'Executer installer.ps1 en premier.' }
+    if (Select-String -Path '.env' -SimpleMatch '=GENERER' -Quiet) { throw 'Le fichier .env contient encore GENERER.' }
+    Invoke-Native docker @('compose', 'config', '--quiet')
+}
+function Test-Owner {
+    if (-not (Test-Path '.tools\managed-airbyte')) { throw 'Executer installer.ps1 dans ce dossier.' }
+}
+function Start-Cluster {
+    if (Test-Container 'airbyte-abctl-control-plane') {
+        Invoke-Native docker @('start', 'airbyte-abctl-control-plane')
+    } else {
+        Invoke-Native $script:Abctl @('local', 'install', '--chart-version', '2.3.0', '--low-resource-mode', '--no-browser')
+    }
+    Invoke-Native docker @('network', 'inspect', 'kind', '--format', '{{.Name}}')
+}
+function Start-Services {
+    Invoke-Native docker @('compose', 'up', '-d', '--build')
+    Invoke-Native docker @('compose', 'ps')
+    Write-Host 'Services lances. Attendre leur initialisation puis suivre README.md.'
+}

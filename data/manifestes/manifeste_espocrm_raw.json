@@ -1,0 +1,41 @@
+{
+    "lot":  "espocrm_raw",
+    "source":  "EspoCRM - API REST (accounts, contacts, opportunities)",
+    "url_source":  "http://localhost:8081/api/v1",
+    "licence":  "Données fictives créées pour le projet",
+    "chemin_minio":  "dsid-raw/Raw-Ess-API/Espocrm_*/",
+    "outil_collecte":  "Airbyte Connector Builder -\u003e destination S3 (MinIO), JSONL",
+    "date_collecte":  "\u003cdate \u0027Last Modified\u0027 affichée dans MinIO\u003e",
+    "date_manifeste":  "2026-11-13T19:19:42+01:00",
+    "nb_fichiers":  3,
+    "nb_lignes_total":  52,
+    "fichiers":  [
+                     {
+                         "fichier_original":  "extraction_date=2026-11-122_accounts.jsonl",
+                         "taille_octets":  8218,
+                         "nb_lignes":  12,
+                         "sha256_original":  "7ae919b988c7d7b6178db3816563df278546b6a2cf0866dcbc581682d92f3934",
+                         "fichier_rendu":  "data/echantillons/espocrm_raw/extraction_date=2026-11-122_accounts.jsonl",
+                         "type_rendu":  "fichier complet",
+                         "sha256_rendu":  "7ae919b988c7d7b6178db3816563df278546b6a2cf0866dcbc581682d92f3934"
+                     },
+                     {
+                         "fichier_original":  "extraction_date=2026-11-122_contacts.jsonl",
+                         "taille_octets":  13288,
+                         "nb_lignes":  20,
+                         "sha256_original":  "5924659abd90ffd35aac4d215f67e1954ecfec1c2ebc24b3d1e1614cecb9241e",
+                         "fichier_rendu":  "data/echantillons/espocrm_raw/extraction_date=2026-11-122_contacts.jsonl",
+                         "type_rendu":  "fichier complet",
+                         "sha256_rendu":  "5924659abd90ffd35aac4d215f67e1954ecfec1c2ebc24b3d1e1614cecb9241e"
+                     },
+                     {
+                         "fichier_original":  "extraction_date=2026-11-122_opportunités.jsonl",
+                         "taille_octets":  10135,
+                         "nb_lignes":  20,
+                         "sha256_original":  "e9b3d884c9b8a16dc9647e5236d6144acc6bec5e1bed2826462a2f12d9c5276e",
+                         "fichier_rendu":  "data/echantillons/espocrm_raw/extraction_date=2026-11-122_opportunités.jsonl",
+                         "type_rendu":  "fichier complet",
+                         "sha256_rendu":  "e9b3d884c9b8a16dc9647e5236d6144acc6bec5e1bed2826462a2f12d9c5276e"
+                     }
+                 ]
+}

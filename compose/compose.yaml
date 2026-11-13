@@ -1,0 +1,161 @@
+name: dsid-etudiant
+
+services:
+  espocrm-db:
+    image: mariadb:11.8.9@sha256:79d59758afc91b89b120b0a8904d637f5a3b3e1c4900f29b740d6d46c72fef68
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${ESPOCRM_DB_ROOT_PASSWORD:?Lancer le script installer}
+      MARIADB_DATABASE: espocrm
+      MARIADB_USER: espocrm
+      MARIADB_PASSWORD: ${ESPOCRM_DB_PASSWORD:?Lancer le script installer}
+    volumes:
+      - espocrm_db:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+    networks:
+      stack-dsid: {}
+      airbyte:
+        aliases: [dsid-espocrm-db]
+
+  espocrm:
+    image: espocrm/espocrm:10.0.8@sha256:817f2b063de2c9dc2655fedbf1960af33c9b04e84d61a4b95f243e8e9189de69
+    restart: unless-stopped
+    depends_on:
+      espocrm-db:
+        condition: service_healthy
+    environment:
+      ESPOCRM_DATABASE_PLATFORM: Mysql
+      ESPOCRM_DATABASE_HOST: espocrm-db
+      ESPOCRM_DATABASE_NAME: espocrm
+      ESPOCRM_DATABASE_USER: espocrm
+      ESPOCRM_DATABASE_PASSWORD: ${ESPOCRM_DB_PASSWORD:?Lancer le script installer}
+      ESPOCRM_ADMIN_USERNAME: admin
+      ESPOCRM_ADMIN_PASSWORD: ${ESPOCRM_ADMIN_PASSWORD:?Lancer le script installer}
+      ESPOCRM_SITE_URL: http://localhost:8081
+    ports: ["127.0.0.1:8081:80"]
+    volumes:
+      - crm_data:/var/www/html/data
+      - crm_custom:/var/www/html/custom
+      - crm_client_custom:/var/www/html/client/custom
+    networks: [stack-dsid]
+
+  espocrm-daemon:
+    image: espocrm/espocrm:10.0.8@sha256:817f2b063de2c9dc2655fedbf1960af33c9b04e84d61a4b95f243e8e9189de69
+    restart: unless-stopped
+    entrypoint: docker-daemon.sh
+    depends_on: [espocrm]
+    volumes:
+      - crm_data:/var/www/html/data
+      - crm_custom:/var/www/html/custom
+      - crm_client_custom:/var/www/html/client/custom
+    networks: [stack-dsid]
+
+  postgres:
+    image: postgres:16.15@sha256:a3b7f434b2dc57ce85a67e171163eb8ab1a1ebcb39d27484661f26b1dfbe30d6
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: dsid
+      POSTGRES_DB: dsid
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Lancer le script installer}
+      METABASE_DB_PASSWORD: ${METABASE_DB_PASSWORD:?Lancer le script installer}
+      BI_READER_PASSWORD: ${BI_READER_PASSWORD:?Lancer le script installer}
+    ports: ["127.0.0.1:5432:5432"]
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/01-init.sh:/docker-entrypoint-initdb.d/01-init.sh:ro
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U dsid -d dsid"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    networks:
+      stack-dsid: {}
+      airbyte:
+        aliases: [dsid-postgres]
+
+  adminer:
+    image: adminer:5@sha256:429e6984e022dd90e37f076a69106efe2c49697687b5b315122cec05f2c4653a
+    restart: unless-stopped
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
+    ports: ["127.0.0.1:8082:8080"]
+    networks: [stack-dsid]
+
+  metabase:
+    image: metabase/metabase:v0.63.18@sha256:1160b570cb11c107bce00e71293552df8a8363e01a32c2c7a048cee002dc8a73
+    profiles: [bi]
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_HOST: postgres
+      MB_DB_PORT: 5432
+      MB_DB_DBNAME: metabase
+      MB_DB_USER: metabase_app
+      MB_DB_PASS: ${METABASE_DB_PASSWORD:?Lancer le script installer}
+    ports: ["127.0.0.1:3000:3000"]
+    networks: [stack-dsid]
+
+  json-server:
+    build: ./json-server
+    restart: unless-stopped
+    ports: ["127.0.0.1:3001:3000"]
+    volumes: ["json_data:/data"]
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3000/clients').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+    networks:
+      stack-dsid: {}
+      airbyte:
+        aliases: [dsid-json-server]
+
+  minio:
+    image: elestio/minio:latest@sha256:25348a257f1ece1b192f25f6cd9854618fa86422ac87b494b5d4e629c556d4bd
+    restart: unless-stopped
+    environment:
+      MINIO_ROOT_USER: dsidminio
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?Lancer le script installer}
+    command: [server, /data, --console-address, ":9001"]
+    ports: ["127.0.0.1:9000:9000", "127.0.0.1:9001:9001"]
+    volumes: ["minio_data:/data"]
+    networks:
+      stack-dsid: {}
+      airbyte:
+        aliases: [dsid-minio]
+
+  dbt:
+    build: ./dbt
+    profiles: [tools]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DBT_PROFILES_DIR: /usr/app
+      DBT_POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Lancer le script installer}
+    volumes: ["./dbt/project:/usr/app"]
+    networks: [stack-dsid]
+
+networks:
+  stack-dsid:
+    driver: bridge
+  airbyte:
+    external: true
+    name: kind
+
+volumes:
+  espocrm_db:
+  crm_data:
+  crm_custom:
+  crm_client_custom:
+  postgres_data:
+  json_data:
+  minio_data:

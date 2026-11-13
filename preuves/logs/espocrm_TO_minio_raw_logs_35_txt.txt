@@ -1,0 +1,372 @@
+>> ATTEMPT 1/1
+
+2026-11-12 19:21:52 info APPLY Stage: BUILD — (workloadId=51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync)
+2026-11-12 19:21:52 info APPLY Stage: CLAIM — (workloadId=51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync)
+2026-11-12 19:21:52 info Claimed: true for workload 51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync via API in dataplane effbe697-2bea-4f5c-a2d6-af49b05d3273 (7f78a4e4-9727-4b3c-b81e-81278bee2ffc)
+2026-11-12 19:21:52 info APPLY Stage: LOAD_SHED — (workloadId=51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync)
+2026-11-12 19:21:52 info APPLY Stage: CHECK_STATUS — (workloadId=51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync)
+2026-11-12 19:21:52 info No pod found running for workload 51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync
+2026-11-12 19:21:52 info APPLY Stage: MUTEX — (workloadId=51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync)
+2026-11-12 19:21:52 info Mutex key: 51772bdd-c6e3-4821-8683-037f639d57a9 specified for workload: 51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync. Attempting to delete existing pods...
+2026-11-12 19:21:52 info Mutex key: 51772bdd-c6e3-4821-8683-037f639d57a9 specified for workload: 51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync found no existing pods. Continuing...
+2026-11-12 19:21:52 info APPLY Stage: ARCHITECTURE — (workloadId=51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync)
+2026-11-12 19:21:52 info Building STDIO environment: source IPC options missing
+2026-11-12 19:21:52 info APPLY Stage: LAUNCH — (workloadId=51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync)
+2026-11-12 19:21:52 info [initContainer] image: airbyte/workload-init-container:2.3.0 resources: ResourceRequirements(claims=[], limits={memory=4Gi, cpu=3}, requests={memory=0, cpu=0}, additionalProperties={})
+2026-11-12 19:21:52 info Launching replication pod: replication-job-35-attempt-0 (selectors = {}) with containers:
+2026-11-12 19:21:52 info [source] image: airbyte/source-declarative-manifest:7.28.2 resources: ResourceRequirements(claims=[], limits={memory=4Gi, cpu=3}, requests={memory=0, cpu=0}, additionalProperties={})
+2026-11-12 19:21:52 info [destination] image: airbyte/destination-s3:1.9.11 resources: ResourceRequirements(claims=[], limits={memory=4Gi, cpu=3}, requests={memory=2Gi, cpu=0}, additionalProperties={})
+2026-11-12 19:21:52 info [orchestrator] image: airbyte/container-orchestrator:2.3.0 resources: ResourceRequirements(claims=[], limits={memory=4Gi, cpu=3}, requests={memory=0, cpu=0}, additionalProperties={})
+2026-11-12 19:22:01 info Attempting to update workload: 51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync to LAUNCHED.
+2026-11-12 19:22:01 info Pipeline completed for workload: 51772bdd-c6e3-4821-8683-037f639d57a9_35_0_sync.
+2026-11-12 19:22:04 info Running replication worker...
+2026-11-12 19:22:04 info Starting replication worker. job id: 35 attempt: 0
+2026-11-12 19:22:04 info 
+2026-11-12 19:22:04 info ----- START REPLICATION -----
+2026-11-12 19:22:04 info 
+2026-11-12 19:22:04 info Running destination...
+2026-11-12 19:22:04 info Writing messages to protocol version 0.2.0
+2026-11-12 19:22:04 info Reading messages from protocol version 0.2.0
+2026-11-12 19:22:04 info Reading messages from protocol version 0.2.0
+2026-11-12 19:22:04 info SourceReader started.
+2026-11-12 19:22:04 info DestinationWriter started.
+2026-11-12 19:22:04 info DestinationReader started.
+2026-11-12 19:22:04 info MessageProcessor started.
+2026-11-12 19:22:04 info Starting workload heartbeat (interval=10s; timeout=600s)
+2026-11-12 19:22:04 info Transitioning workload to running state
+2026-11-12 19:22:04 info Workload successfully transitioned to running state
+2026-11-12 19:22:05 info INFO main i.m.c.e.DefaultEnvironment(<init>):170 Established active environments: [k8s, cloud, cli, destination, aws, connector]
+2026-11-12 19:22:06 warn WARN main c.k.j.j.JsonSchemaGenerator$MyJsonFormatVisitorWrapper(expectAnyFormat):725 Not able to generate jsonSchema-info for type: [simple type, class com.fasterxml.jackson.databind.JsonNode] - probably using custom serializer which does not override acceptJsonFormatVisitor
+2026-11-12 19:22:06 info INFO main i.a.c.l.c.DataChannelBeanFactory(dataChannelMedium):60 Using data channel medium STDIO
+2026-11-12 19:22:06 info INFO main i.a.c.l.c.DataChannelBeanFactory(namespaceMapper):308 Going to use the given source value: SOURCE for namespace
+2026-11-12 19:22:06 info INFO main i.a.c.l.c.DestinationCatalog(<init>):51 Destination catalog initialized: [DestinationStream(unmappedNamespace=null, unmappedName=Espocrm_accounts, importType=Append, schema=ObjectType(properties={id=FieldType(type=StringType, nullable=true), name=FieldType(type=StringType, nullable=true), type=FieldType(type=StringType, nullable=true), siren=FieldType(type=StringType, nullable=true), website=FieldType(type=StringType, nullable=true), industry=FieldType(type=StringType, nullable=true), description=FieldType(type=StringType, nullable=true), phoneNumber=FieldType(type=StringType, nullable=true), emailAddress=FieldType(type=StringType, nullable=true), billingAddressCity=FieldType(type=StringType, nullable=true), billingAddressState=FieldType(type=StringType, nullable=true), billingAddressStreet=FieldType(type=StringType, nullable=true), billingAddressCountry=FieldType(type=StringType, nullable=true), billingAddressPostalCode=FieldType(type=StringType, nullable=true)}, additionalProperties=true, required=[]), generationId=4, minimumGenerationId=4, syncId=35, isFileBased=false, includeFiles=false, destinationObjectName=null, matchingKey=null, namespaceMapper=io.airbyte.cdk.load.command.NamespaceMapper@4b603b79), DestinationStream(unmappedNamespace=null, unmappedName=Espocrm_opportunities, importType=Append, schema=ObjectType(properties={id=FieldType(type=StringType, nullable=true), name=FieldType(type=StringType, nullable=true), stage=FieldType(type=StringType, nullable=true), amount=FieldType(type=NumberType, nullable=true), accountId=FieldType(type=StringType, nullable=true), closeDate=FieldType(type=StringType, nullable=true), leadSource=FieldType(type=StringType, nullable=true), accountName=FieldType(type=StringType, nullable=true), description=FieldType(type=StringType, nullable=true), probability=FieldType(type=NumberType, nullable=true), amountCurrency=FieldType(type=StringType, nullable=true)}, additionalProperties=true, required=[]), generationId=4, minimumGenerationId=4, syncId=35, isFileBased=false, includeFiles=false, destinationObjectName=null, matchingKey=null, namespaceMapper=io.airbyte.cdk.load.command.NamespaceMapper@4b603b79), DestinationStream(unmappedNamespace=null, unmappedName=Espocrm_contacts, importType=Append, schema=ObjectType(properties={id=FieldType(type=StringType, nullable=true), name=FieldType(type=StringType, nullable=true), title=FieldType(type=StringType, nullable=true), lastName=FieldType(type=StringType, nullable=true), accountId=FieldType(type=StringType, nullable=true), firstName=FieldType(type=StringType, nullable=true), isStarred=FieldType(type=BooleanType, nullable=true), accountName=FieldType(type=StringType, nullable=true), addressCity=FieldType(type=StringType, nullable=true), createdById=FieldType(type=StringType, nullable=true), description=FieldType(type=StringType, nullable=true), phoneNumber=FieldType(type=StringType, nullable=true), emailAddress=FieldType(type=StringType, nullable=true), addressCountry=FieldType(type=StringType, nullable=true), salutationName=FieldType(type=StringType, nullable=true), accountIsInactive=FieldType(type=BooleanType, nullable=true), addressPostalCode=FieldType(type=StringType, nullable=true)}, additionalProperties=true, required=[]), generationId=4, minimumGenerationId=4, syncId=35, isFileBased=false, includeFiles=false, destinationObjectName=null, matchingKey=null, namespaceMapper=io.airbyte.cdk.load.command.NamespaceMapper@4b603b79)]
+2026-11-12 19:22:07 info INFO main i.a.c.l.c.DataChannelBeanFactory(logPerNRecords):137 Logging every 100000 records
+2026-11-12 19:22:07 info INFO main i.a.c.l.c.DataChannelBeanFactory(dataChannelSocketPaths):69 Using socket paths []
+2026-11-12 19:22:07 info INFO main i.a.c.l.s.PipelineEventBookkeepingRouter(<init>):93 Creating bookkeeping router for 1 data channels
+2026-11-12 19:22:07 info INFO main i.a.c.l.f.s.S3ClientFactory(make):197 Creating S3 client using Kotlin SDK
+2026-11-12 19:22:07 info INFO main i.a.c.l.c.DataChannelBeanFactory(dataChannelFormat):79 Using data channel format JSONL
+2026-11-12 19:22:07 info INFO main i.a.c.AirbyteConnectorRunnable(run):35 Executing class io.airbyte.cdk.load.write.WriteOperation operation.
+2026-11-12 19:22:07 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):156 Starting input consumer task
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.internal.InputConsumerTask@485cd893)
+2026-11-12 19:22:07 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):161 Starting startup task
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.i.InputConsumerTask(execute):73 Starting consuming messages from the input flow
+2026-11-12 19:22:07 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):165 Launching open stream task 0
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.implementor.SetupTask@728e22ee)
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.i.ReservingDeserializingInputFlow(collect):32 Reserved 4691mb memory for input processing
+2026-11-12 19:22:07 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):169 Setting up load pipeline
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.implementor.SetupTask@728e22ee) completed
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-2 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.implementor.OpenStreamTask@2125dead)
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartFormatter, part=1))
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartFormatter, part=0))
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartLoader, part=1))
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartLoader, part=0))
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartLoader, part=2))
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartLoader, part=3))
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartLoader, part=4))
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(LoadPipelineStepTask(ObjectLoaderUploadCompleter, part=0))
+2026-11-12 19:22:07 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):171 Launching update batch task
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.internal.UpdateBatchStateTask@134b6a04)
+2026-11-12 19:22:07 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):174 Launching heartbeat task
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.internal.HeartbeatTask@34fc7381)
+2026-11-12 19:22:07 info INFO main i.a.c.l.t.DestinationTaskLauncher(run):183 Starting checkpoint update task
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.internal.UpdateCheckpointsTask@30efe0f9)
+2026-11-12 19:22:07 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.i.UpdateCheckpointsTask(execute):34 Starting to consume checkpoint messages (state) for updating
+2026-11-12 19:22:08 info MemoryMonitor instantiated with critical threshold: 95%, anon share of usage threshold: 85%, high-pressure threshold: 90%, check interval: 5000 messages (tightens to 100 under high pressure).
+2026-11-12 19:22:08 info Starting syncing
+2026-11-12 19:22:08 info Marking stream accounts as STARTED
+2026-11-12 19:22:08 info Syncing stream: accounts
+2026-11-12 19:22:08 info Marking stream opportunities as STARTED
+2026-11-12 19:22:08 info Syncing stream: opportunities
+2026-11-12 19:22:08 info Marking stream contacts as STARTED
+2026-11-12 19:22:08 info Syncing stream: contacts
+2026-11-12 19:22:08 info Marking stream accounts as RUNNING
+2026-11-12 19:22:08 info Stream status TRACE received of status: STARTED for stream accounts
+2026-11-12 19:22:08 info Sending update for accounts - null -> RUNNING
+2026-11-12 19:22:08 info Marking stream opportunities as RUNNING
+2026-11-12 19:22:08 info Stream Status Update Received: accounts - RUNNING
+2026-11-12 19:22:08 info Creating status: accounts - RUNNING
+2026-11-12 19:22:08 info Read 12 records from accounts stream
+2026-11-12 19:22:08 info Marking stream accounts as STOPPED
+2026-11-12 19:22:08 info Finished syncing accounts
+2026-11-12 19:22:08 info Stream completed: null.accounts
+2026-11-12 19:22:08 info Current stream completion status: {io.airbyte.protocol.models.v0.StreamDescriptor@7a3fbb11[name=opportunities,namespace=<null>,additionalProperties={}]=false, io.airbyte.protocol.models.v0.StreamDescriptor@32195954[name=contacts,namespace=<null>,additionalProperties={}]=false, io.airbyte.protocol.models.v0.StreamDescriptor@344c2cdd[name=accounts,namespace=<null>,additionalProperties={}]=false}
+2026-11-12 19:22:08 info Read 20 records from opportunities stream
+2026-11-12 19:22:08 info Marking stream opportunities as STOPPED
+2026-11-12 19:22:08 info Finished syncing opportunities
+2026-11-12 19:22:08 info Stream completed: null.opportunities
+2026-11-12 19:22:08 info Current stream completion status: {io.airbyte.protocol.models.v0.StreamDescriptor@7a3fbb11[name=opportunities,namespace=<null>,additionalProperties={}]=false, io.airbyte.protocol.models.v0.StreamDescriptor@32195954[name=contacts,namespace=<null>,additionalProperties={}]=false, io.airbyte.protocol.models.v0.StreamDescriptor@344c2cdd[name=accounts,namespace=<null>,additionalProperties={}]=true}
+2026-11-12 19:22:08 info Marking stream contacts as RUNNING
+2026-11-12 19:22:08 info Read 20 records from contacts stream
+2026-11-12 19:22:08 info Marking stream contacts as STOPPED
+2026-11-12 19:22:08 info Finished syncing contacts
+2026-11-12 19:22:08 info Stream completed: null.contacts
+2026-11-12 19:22:08 info Current stream completion status: {io.airbyte.protocol.models.v0.StreamDescriptor@7a3fbb11[name=opportunities,namespace=<null>,additionalProperties={}]=true, io.airbyte.protocol.models.v0.StreamDescriptor@32195954[name=contacts,namespace=<null>,additionalProperties={}]=false, io.airbyte.protocol.models.v0.StreamDescriptor@344c2cdd[name=accounts,namespace=<null>,additionalProperties={}]=true}
+2026-11-12 19:22:08 info Finished syncing
+2026-11-12 19:22:09 info Stream status TRACE received of status: STARTED for stream opportunities
+2026-11-12 19:22:09 info Sending update for opportunities - null -> RUNNING
+2026-11-12 19:22:09 info Stream Status Update Received: opportunities - RUNNING
+2026-11-12 19:22:09 info Creating status: opportunities - RUNNING
+2026-11-12 19:22:09 info Stream status TRACE received of status: STARTED for stream contacts
+2026-11-12 19:22:09 info Sending update for contacts - null -> RUNNING
+2026-11-12 19:22:09 info Stream Status Update Received: contacts - RUNNING
+2026-11-12 19:22:09 info Creating status: contacts - RUNNING
+2026-11-12 19:22:09 info Stream status TRACE received of status: RUNNING for stream accounts
+2026-11-12 19:22:09 info Stream status TRACE received of status: RUNNING for stream opportunities
+2026-11-12 19:22:09 info Stream status TRACE received of status: COMPLETE for stream accounts
+2026-11-12 19:22:09 info Stream status TRACE received of status: COMPLETE for stream opportunities
+2026-11-12 19:22:09 info Stream status TRACE received of status: RUNNING for stream contacts
+2026-11-12 19:22:09 info Stream status TRACE received of status: COMPLETE for stream contacts
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-1 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):114 Saw first record for stream Descriptor(namespace=null, name=Espocrm_accounts); awaiting setup complete
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-1 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):118 Setup complete, starting stream Descriptor(namespace=null, name=Espocrm_accounts)
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):121 Initialization for stream Descriptor(namespace=null, name=Espocrm_accounts) complete
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):114 Saw first record for stream Descriptor(namespace=null, name=Espocrm_opportunities); awaiting setup complete
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):118 Setup complete, starting stream Descriptor(namespace=null, name=Espocrm_opportunities)
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):121 Initialization for stream Descriptor(namespace=null, name=Espocrm_opportunities) complete
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):114 Saw first record for stream Descriptor(namespace=null, name=Espocrm_contacts); awaiting setup complete
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):118 Setup complete, starting stream Descriptor(namespace=null, name=Espocrm_contacts)
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-10 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):121 Initialization for stream Descriptor(namespace=null, name=Espocrm_contacts) complete
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.i.UpdateCheckpointsTask$execute$3(emit):39 Updating stream checkpoint Descriptor(namespace=null, name=Espocrm_accounts):CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1)):Stats(recordCount=12, rejectedRecordCount=0, additionalStats={})
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-6 i.a.c.l.s.CheckpointManager(addStreamCheckpoint):116 Added checkpoint for stream: Descriptor(namespace=null, name=Espocrm_accounts) at index: CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1))
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.i.UpdateCheckpointsTask$execute$3(emit):39 Updating stream checkpoint Descriptor(namespace=null, name=Espocrm_opportunities):CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1)):Stats(recordCount=20, rejectedRecordCount=0, additionalStats={})
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-6 i.a.c.l.s.CheckpointManager(addStreamCheckpoint):116 Added checkpoint for stream: Descriptor(namespace=null, name=Espocrm_opportunities) at index: CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1))
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-4 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/Espocrm_accounts/extraction_date=2026-11-122.jsonl (Descriptor(namespace=null, name=Espocrm_accounts))
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-6 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/Espocrm_opportunities/extraction_date=2026-11-122.jsonl (Descriptor(namespace=null, name=Espocrm_opportunities))
+2026-11-12 19:22:09 info INFO DefaultDispatcher-worker-1 i.a.c.l.p.o.ObjectLoaderPartFormatter(newState):83 Starting part generation for dsid-raw/Raw-Ess-API/Espocrm_contacts/extraction_date=2026-11-122.jsonl (Descriptor(namespace=null, name=Espocrm_contacts))
+2026-11-12 19:22:19 info Total records read: (22 KB)
+2026-11-12 19:22:19 info Schema validation was performed to a max of 10 records with errors per stream.
+2026-11-12 19:22:19 warn Source c944d752-ea67-4350-9b34-816f6fbd8852 has unexpected fields [createdById, isStarred] in stream _accounts
+2026-11-12 19:22:19 warn Source c944d752-ea67-4350-9b34-816f6fbd8852 has unexpected fields [createdById] in stream _opportunities
+2026-11-12 19:22:19 info SourceReader finished.
+2026-11-12 19:22:19 info Source queue closed — stopping message processor...
+2026-11-12 19:22:19 info MessageProcessor finished.
+2026-11-12 19:22:19 info DestinationWriter finished.
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateCheckpointsTask$execute$3(emit):39 Updating stream checkpoint Descriptor(namespace=null, name=Espocrm_contacts):CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1)):Stats(recordCount=20, rejectedRecordCount=0, additionalStats={})
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.s.CheckpointManager(addStreamCheckpoint):116 Added checkpoint for stream: Descriptor(namespace=null, name=Espocrm_contacts) at index: CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1))
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):139 Read COMPLETE for stream Descriptor(namespace=null, name=Espocrm_opportunities)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):139 Read COMPLETE for stream Descriptor(namespace=null, name=Espocrm_contacts)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.s.PipelineEventBookkeepingRouter(handleStreamMessage):139 Read COMPLETE for stream Descriptor(namespace=null, name=Espocrm_accounts)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.i.ReservingDeserializingInputFlow(collect):55 Finished processing input
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.s.PipelineEventBookkeepingRouter(close):290 Maybe closing bookkeeping router 1
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.s.PipelineEventBookkeepingRouter(close):311 Closing internal control channels
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_opportunities): record-part-formatter-step[1]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderPartFormatter, part=0) saw end-of-stream for Descriptor(namespace=null, name=Espocrm_opportunities) after 20 inputs, all workers complete
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_contacts): record-part-formatter-step[1]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_accounts): record-part-formatter-step[1]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/Espocrm_opportunities/extraction_date=2026-11-122.jsonl', size=10135, index=1, isFinal=true), state=PROCESSED)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_opportunities): record-part-formatter-step[0]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_opportunities): record-part-loader-step[0]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_opportunities): record-part-loader-step[1]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_opportunities): record-part-loader-step[3]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_opportunities): record-part-loader-step[4]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/Espocrm_contacts/extraction_date=2026-11-122.jsonl', size=13288, index=1, isFinal=true), state=PROCESSED)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderPartFormatter, part=0) saw end-of-stream for Descriptor(namespace=null, name=Espocrm_contacts) after 20 inputs, all workers complete
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_contacts): record-part-formatter-step[0]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-1 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderPartFormatter, part=0) saw end-of-stream for Descriptor(namespace=null, name=Espocrm_accounts) after 12 inputs, all workers complete
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_contacts): record-part-loader-step[0]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_contacts): record-part-loader-step[3]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_contacts): record-part-loader-step[1]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_accounts): record-part-loader-step[1]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_accounts): record-part-formatter-step[0]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_accounts): record-part-loader-step[3]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_accounts): record-part-loader-step[0]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.m.MultiProducerChannel(close):26 Closing producer fileMessageQueue (active count=0, initialized count: 1)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.m.MultiProducerChannel(close):30 Closing underlying queue
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-7 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.implementor.OpenStreamTask@2125dead) completed
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.UpdateCheckpointsTask(execute):68 All checkpoints (state) updated
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartFormatter, part=1)) completed
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-7 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(LoadPipelineStepTask(ObjectLoaderPartFormatter, part=0)) completed
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.internal.InputConsumerTask@485cd893) completed
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.internal.UpdateCheckpointsTask@30efe0f9) completed
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.p.o.ObjectLoaderPartLoader(accept):133 Uploading part FormattedPart(part=Part(key='dsid-raw/Raw-Ess-API/Espocrm_accounts/extraction_date=2026-11-122.jsonl', size=8218, index=1, isFinal=true), state=PROCESSED)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_contacts): record-part-loader-step[4]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderPartLoader, part=2) saw end-of-stream for Descriptor(namespace=null, name=Espocrm_opportunities) after 1 inputs, all workers complete
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderPartLoader, part=2) saw end-of-stream for Descriptor(namespace=null, name=Espocrm_contacts) after 0 inputs, all workers complete
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_opportunities): record-part-loader-step[2]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_contacts): record-part-loader-step[2]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_accounts): record-part-loader-step[2]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 1 (isFinal=true) completes dsid-raw/Raw-Ess-API/Espocrm_contacts/extraction_date=2026-11-122.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/Espocrm_contacts/extraction_date=2026-11-122.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@24920bdb))
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 1 (isFinal=true) completes dsid-raw/Raw-Ess-API/Espocrm_opportunities/extraction_date=2026-11-122.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/Espocrm_opportunities/extraction_date=2026-11-122.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@2853afb6))
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderPartLoader, part=4) saw end-of-stream for Descriptor(namespace=null, name=Espocrm_accounts) after 1 inputs, all workers complete
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderUploadCompleter, part=0) saw end-of-stream for Descriptor(namespace=null, name=Espocrm_opportunities) after 2 inputs, all workers complete
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderUploadCompleter, part=0) saw end-of-stream for Descriptor(namespace=null, name=Espocrm_contacts) after 2 inputs, all workers complete
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.p.o.ObjectLoaderUploadCompleter(accept):72 Loaded part 1 (isFinal=true) completes dsid-raw/Raw-Ess-API/Espocrm_accounts/extraction_date=2026-11-122.jsonl, finishing (state State(objectKey=dsid-raw/Raw-Ess-API/Espocrm_accounts/extraction_date=2026-11-122.jsonl, partBookkeeper=io.airbyte.cdk.load.file.object_storage.PartBookkeeper@e739d1b))
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.i.LoadPipelineStepTask$execute$$inlined$fold$1(emit):317 LoadPipelineStepTask(ObjectLoaderUploadCompleter, part=0) saw end-of-stream for Descriptor(namespace=null, name=Espocrm_accounts) after 2 inputs, all workers complete
+2026-11-12 19:22:19 info Destination complete for contacts
+2026-11-12 19:22:19 info Sending update for contacts - RUNNING -> COMPLETE
+2026-11-12 19:22:19 info Stream Status Update Received: contacts - COMPLETE
+2026-11-12 19:22:19 info Updating status: contacts - COMPLETE
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.s.CheckpointManager(flushStreamCheckpoints):364 Flushed checkpoint for stream: Descriptor(namespace=null, name=Espocrm_contacts) at index: CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1)) (records=20, bytes=11699)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=null, name=Espocrm_contacts)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):204 Batch processing complete: Starting close stream task for Descriptor(namespace=null, name=Espocrm_contacts)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.implementor.CloseStreamTask@1a3f22d2)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_accounts): record-part-loader-step[4]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.w.o.ObjectStorageStreamLoader(close):45 Truncate sync succeeded, Removing old files
+2026-11-12 19:22:19 info Destination complete for opportunities
+2026-11-12 19:22:19 info Sending update for opportunities - RUNNING -> COMPLETE
+2026-11-12 19:22:19 info Stream Status Update Received: opportunities - COMPLETE
+2026-11-12 19:22:19 info Updating status: opportunities - COMPLETE
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.w.o.ObjectStorageStreamLoader(close):47 Deleting old objects
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.s.CheckpointManager(flushStreamCheckpoints):364 Flushed checkpoint for stream: Descriptor(namespace=null, name=Espocrm_opportunities) at index: CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1)) (records=20, bytes=8652)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=null, name=Espocrm_opportunities)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):204 Batch processing complete: Starting close stream task for Descriptor(namespace=null, name=Espocrm_opportunities)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.implementor.CloseStreamTask@210753ed)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=null, name=Espocrm_opportunities)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-5 i.a.c.l.w.o.ObjectStorageStreamLoader(close):45 Truncate sync succeeded, Removing old files
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-5 i.a.c.l.w.o.ObjectStorageStreamLoader(close):47 Deleting old objects
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_opportunities): final-step[0]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=null, name=Espocrm_opportunities)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=null, name=Espocrm_contacts)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-5 i.a.c.l.s.o.ObjectStorageDestinationState(getObjectsToDelete):63 Searching dsid-raw/Raw-Ess-API/Espocrm_opportunities/extraction_date= for objects to delete (minGenId=4; matcher=dsid-raw/Raw-Ess-API/(\QEspocrm_opportunities\E)/extraction_date=(\d{4})-(\d{2})-(\d{2})(\d+)(.jsonl)(-[0-9]+)?)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-4 i.a.c.l.s.o.ObjectStorageDestinationState(getObjectsToDelete):63 Searching dsid-raw/Raw-Ess-API/Espocrm_contacts/extraction_date= for objects to delete (minGenId=4; matcher=dsid-raw/Raw-Ess-API/(\QEspocrm_contacts\E)/extraction_date=(\d{4})-(\d{2})-(\d{2})(\d+)(.jsonl)(-[0-9]+)?)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_contacts): final-step[0]
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=null, name=Espocrm_contacts)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 19:22:19 info Destination complete for accounts
+2026-11-12 19:22:19 info Sending update for accounts - RUNNING -> COMPLETE
+2026-11-12 19:22:19 info Stream Status Update Received: accounts - COMPLETE
+2026-11-12 19:22:19 info Updating status: accounts - COMPLETE
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.s.CheckpointManager(flushStreamCheckpoints):364 Flushed checkpoint for stream: Descriptor(namespace=null, name=Espocrm_accounts) at index: CheckpointKey(checkpointIndex=CheckpointIndex(value=1), checkpointId=CheckpointId(value=1)) (records=12, bytes=7258)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=null, name=Espocrm_accounts)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):204 Batch processing complete: Starting close stream task for Descriptor(namespace=null, name=Espocrm_accounts)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.implementor.CloseStreamTask@d8c1caa)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=null, name=Espocrm_accounts)
+2026-11-12 19:22:19 info INFO DefaultDispatcher-worker-6 i.a.c.l.w.o.ObjectStorageStreamLoader(close):45 Truncate sync succeeded, Removing old files
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-6 i.a.c.l.w.o.ObjectStorageStreamLoader(close):47 Deleting old objects
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.i.UpdateBatchStateTask$execute$2(emit):48 End-of-stream checks for Descriptor(namespace=null, name=Espocrm_accounts): final-step[0]
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-6 i.a.c.l.s.o.ObjectStorageDestinationState(getObjectsToDelete):63 Searching dsid-raw/Raw-Ess-API/Espocrm_accounts/extraction_date= for objects to delete (minGenId=4; matcher=dsid-raw/Raw-Ess-API/(\QEspocrm_accounts\E)/extraction_date=(\d{4})-(\d{2})-(\d{2})(\d+)(.jsonl)(-[0-9]+)?)
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):201 Processing complete for Descriptor(namespace=null, name=Espocrm_accounts)
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamComplete):213 Close stream task has already run, skipping.
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.w.o.ObjectStorageStreamLoader(close):49 Persisting state
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-5 i.a.c.l.w.o.ObjectStorageStreamLoader(close):49 Persisting state
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-13 i.a.c.l.w.o.ObjectStorageStreamLoader(close):49 Persisting state
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher(handleStreamClosed):222 Teardown task already enqueued, not enqueuing another one
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.DestinationTaskLauncher(handleStreamClosed):222 Teardown task already enqueued, not enqueuing another one
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.implementor.CloseStreamTask@1a3f22d2) completed
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.implementor.CloseStreamTask@210753ed) completed
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.implementor.CloseStreamTask@d8c1caa) completed
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):33 Launching TaskWrapper(io.airbyte.cdk.load.task.implementor.TeardownTask@51dfc909)
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.TeardownTask(execute):35 Teardown task awaiting stream processing completion
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.TeardownTask(execute):41 All streams processed successfully, awaiting all checkpoints flushed
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.s.CheckpointManager(awaitAllCheckpointsFlushed):426 All checkpoints flushed
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.TeardownTask(execute):43 Starting teardown task
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.i.TeardownTask(execute):45 Teardown task complete, marking sync succeeded.
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.TaskScopeProvider$launch$job$1(invokeSuspend):35 Task TaskWrapper(io.airbyte.cdk.load.task.implementor.TeardownTask@51dfc909) completed
+2026-11-12 19:22:20 info INFO main i.a.c.l.t.TaskScopeProvider(close):45 Closing normally, canceling long-running tasks
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-13 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task io.airbyte.cdk.load.task.internal.UpdateBatchStateTask@134b6a04 was cancelled.
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-6 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderPartLoader, part=0) was cancelled.
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-5 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderPartLoader, part=1) was cancelled.
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-10 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task io.airbyte.cdk.load.task.internal.HeartbeatTask@34fc7381 was cancelled.
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-8 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderPartLoader, part=2) was cancelled.
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-12 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderPartLoader, part=3) was cancelled.
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-4 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderPartLoader, part=4) was cancelled.
+2026-11-12 19:22:20 info INFO main i.a.c.l.t.TaskScopeProvider(close):48 Verifying task completion
+2026-11-12 19:22:20 info INFO DefaultDispatcher-worker-3 i.a.c.l.t.DestinationTaskLauncher$WrappedTask(execute):124 Task LoadPipelineStepTask(ObjectLoaderUploadCompleter, part=0) was cancelled.
+2026-11-12 19:22:20 info INFO main i.a.c.l.w.WriteOperation$execute$1(invokeSuspend):65 Destination completed successfully and all streams were complete.
+2026-11-12 19:22:20 info INFO main i.a.c.AirbyteConnectorRunnable(run):47 Flushing output consumer prior to shutdown.
+2026-11-12 19:22:20 info INFO main i.a.c.AirbyteConnectorRunnable(run):49 Completed integration: airbyte/destination-s3.
+2026-11-12 19:22:31 info DestinationReader finished.
+2026-11-12 19:22:31 info Closing StateCheckSumCountEventHandler
+2026-11-12 19:22:31 info No checksum errors were reported in the entire sync.
+2026-11-12 19:22:31 info Sync summary: {
+  "status" : "completed",
+  "recordsSynced" : 52,
+  "bytesSynced" : 22777,
+  "startTime" : 1794507724607,
+  "endTime" : 1794507751580,
+  "totalStats" : {
+    "additionalStats" : { },
+    "bytesCommitted" : 22777,
+    "bytesEmitted" : 22777,
+    "destinationStateMessagesEmitted" : 3,
+    "destinationWriteEndTime" : 1794507751494,
+    "destinationWriteStartTime" : 1794507724698,
+    "meanSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBeforeSourceStateMessageEmitted" : 1,
+    "maxSecondsBetweenStateMessageEmittedandCommitted" : 10,
+    "meanSecondsBetweenStateMessageEmittedandCommitted" : 10,
+    "recordsEmitted" : 52,
+    "recordsCommitted" : 52,
+    "recordsFilteredOut" : 0,
+    "bytesFilteredOut" : 0,
+    "replicationEndTime" : 1794507751498,
+    "replicationStartTime" : 1794507724607,
+    "sourceReadEndTime" : 1794507739300,
+    "sourceReadStartTime" : 1794507724698,
+    "sourceStateMessagesEmitted" : 3
+  },
+  "streamStats" : [ {
+    "streamName" : "contacts",
+    "stats" : {
+      "additionalStats" : {
+        "sourceFieldsPopulated" : 324
+      },
+      "bytesCommitted" : 9879,
+      "bytesEmitted" : 9879,
+      "estimatedBytes" : 0,
+      "estimatedRecords" : 0,
+      "recordsEmitted" : 20,
+      "recordsCommitted" : 20,
+      "recordsFilteredOut" : 0,
+      "bytesFilteredOut" : 0
+    }
+  }, {
+    "streamName" : "accounts",
+    "stats" : {
+      "additionalStats" : {
+        "sourceFieldsPopulated" : 156
+      },
+      "bytesCommitted" : 6166,
+      "bytesEmitted" : 6166,
+      "estimatedBytes" : 0,
+      "estimatedRecords" : 0,
+      "recordsEmitted" : 12,
+      "recordsCommitted" : 12,
+      "recordsFilteredOut" : 0,
+      "bytesFilteredOut" : 0
+    }
+  }, {
+    "streamName" : "opportunities",
+    "stats" : {
+      "additionalStats" : {
+        "sourceFieldsPopulated" : 212
+      },
+      "bytesCommitted" : 6732,
+      "bytesEmitted" : 6732,
+      "estimatedBytes" : 0,
+      "estimatedRecords" : 0,
+      "recordsEmitted" : 20,
+      "recordsCommitted" : 20,
+      "recordsFilteredOut" : 0,
+      "bytesFilteredOut" : 0
+    }
+  } ],
+  "performanceMetrics" : { },
+  "streamCount" : 3
+}
+2026-11-12 19:22:31 info Failures: [ ]
+2026-11-12 19:22:31 info Closing io.micronaut.context.propagation.instrument.execution.ContextPropagatingExecutorService@42401b81
+2026-11-12 19:22:31 info 
+2026-11-12 19:22:31 info ----- END REPLICATION -----
+2026-11-12 19:22:31 info 
+2026-11-12 19:22:31 info Closing io.micronaut.context.propagation.instrument.execution.ContextPropagatingExecutorService@f1d1463
+2026-11-12 19:22:31 info Closing io.airbyte.container.orchestrator.worker.io.LocalContainerAirbyteDestination@47ef5a33
+2026-11-12 19:22:31 info Closing io.airbyte.container.orchestrator.worker.io.LocalContainerAirbyteSource@299a43d9
+2026-11-12 19:22:31 info Closing io.airbyte.container.orchestrator.worker.RecordSchemaValidator@5fa5c8cf
+2026-11-12 19:22:31 info Closing io.airbyte.container.orchestrator.persistence.SyncPersistenceImpl@d7055be
+2026-11-12 19:22:31 info Returning output...
+2026-11-12 19:22:32 info 
+----- START POST REPLICATION OPERATIONS -----
+
+
+2026-11-12 19:22:32 info No post-replication operation(s) to perform.
+2026-11-12 19:22:32 info 
+----- END POST REPLICATION OPERATIONS -----
+
+
+
+
+

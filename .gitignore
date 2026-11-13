@@ -1,0 +1,7 @@
+﻿.env
+**/.env
+!**/.env.example
+**/pgdata/
+**/minio-data/
+**/volumes/
+*.zip

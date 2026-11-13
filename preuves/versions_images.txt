@@ -1,0 +1,7 @@
+/dsid-etudiant-postgres-1 | postgres:16.15@sha256:a3b7f434b2dc57ce85a67e171163eb8ab1a1ebcb39d27484661f26b1dfbe30d6 | sha256:a3b7f434b2dc57ce85a67e171163eb8ab1a1ebcb39d27484661f26b1dfbe30d6
+/dsid-etudiant-espocrm-daemon-1 | espocrm/espocrm:10.0.8@sha256:817f2b063de2c9dc2655fedbf1960af33c9b04e84d61a4b95f243e8e9189de69 | sha256:817f2b063de2c9dc2655fedbf1960af33c9b04e84d61a4b95f243e8e9189de69
+/dsid-etudiant-espocrm-1 | espocrm/espocrm:10.0.8@sha256:817f2b063de2c9dc2655fedbf1960af33c9b04e84d61a4b95f243e8e9189de69 | sha256:817f2b063de2c9dc2655fedbf1960af33c9b04e84d61a4b95f243e8e9189de69
+/dsid-etudiant-minio-1 | elestio/minio:latest@sha256:25348a257f1ece1b192f25f6cd9854618fa86422ac87b494b5d4e629c556d4bd | sha256:25348a257f1ece1b192f25f6cd9854618fa86422ac87b494b5d4e629c556d4bd
+/dsid-etudiant-adminer-1 | adminer:5@sha256:429e6984e022dd90e37f076a69106efe2c49697687b5b315122cec05f2c4653a | sha256:429e6984e022dd90e37f076a69106efe2c49697687b5b315122cec05f2c4653a
+/dsid-etudiant-json-server-1 | dsid-etudiant-json-server | sha256:52e954a9c1c6c9e3706d9542cbce3ce7d5e5aa9e281b2bb84befeda8f99ea412
+/dsid-etudiant-espocrm-db-1 | mariadb:11.8.9@sha256:79d59758afc91b89b120b0a8904d637f5a3b3e1c4900f29b740d6d46c72fef68 | sha256:79d59758afc91b89b120b0a8904d637f5a3b3e1c4900f29b740d6d46c72fef68

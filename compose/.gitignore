@@ -1,0 +1,5 @@
+.env
+.tools/
+backups/
+dbt/project/target/
+dbt/project/logs/

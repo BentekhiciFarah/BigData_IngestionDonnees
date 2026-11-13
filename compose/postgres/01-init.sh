@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" \
+  --set=mb_password="$METABASE_DB_PASSWORD" --set=bi_password="$BI_READER_PASSWORD" <<'SQL'
+CREATE ROLE metabase_app LOGIN PASSWORD :'mb_password';
+CREATE DATABASE metabase OWNER metabase_app;
+CREATE ROLE bi_reader LOGIN PASSWORD :'bi_password';
+CREATE SCHEMA crm AUTHORIZATION dsid;
+CREATE SCHEMA mart AUTHORIZATION dsid;
+GRANT CONNECT ON DATABASE dsid TO bi_reader;
+GRANT USAGE ON SCHEMA crm, mart TO bi_reader;
+ALTER DEFAULT PRIVILEGES FOR ROLE dsid IN SCHEMA crm GRANT SELECT ON TABLES TO bi_reader;
+ALTER DEFAULT PRIVILEGES FOR ROLE dsid IN SCHEMA mart GRANT SELECT ON TABLES TO bi_reader;
+SQL
